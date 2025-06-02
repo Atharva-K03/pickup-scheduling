@@ -2,8 +2,7 @@ package com.wastewise.pickup.utility;
 
 import org.springframework.stereotype.Component;
 
-import java.time.Instant;
-import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Utility for generating unique PickUp IDs.
@@ -11,20 +10,15 @@ import java.util.Random;
 @Component
 public class IdGenerator {
 
-    private static final String PREFIX = "PICKUP-";
-    private static final Random random = new Random();
+    private static final String PREFIX = "P";
+    private static final AtomicInteger counter = new AtomicInteger(0);
 
     /**
-     * Generate a unique PickUp ID using timestamp + random suffix.
-     * Format: PICKUP-<epochSeconds>-<6-char alphanumeric>
+     * Generate a unique PickUp ID using an incrementing counter.
+     * Format: PXXX
      */
     public String generatePickUpId() {
-        long epochSec = Instant.now().getEpochSecond();
-        String randomSuffix = random.ints(48, 122 + 1) // ASCII range
-                .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
-                .limit(6)
-                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
-                .toString();
-        return PREFIX + epochSec + "-" + randomSuffix;
+        int id = counter.incrementAndGet();
+        return PREFIX + String.format("%03d", id);
     }
 }

@@ -1,4 +1,3 @@
-// File: src/main/java/com/wastewise/pickup/dto/CreatePickUpDto.java
 package com.wastewise.pickup.dto;
 
 import com.wastewise.pickup.model.enums.Frequency;

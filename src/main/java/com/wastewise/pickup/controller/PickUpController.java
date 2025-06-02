@@ -17,7 +17,7 @@ import java.util.List;
  * REST controller for PickUp endpoints.
  */
 @RestController
-@RequestMapping("/api/pickups")
+@RequestMapping("/pickup")
 @RequiredArgsConstructor
 public class PickUpController {
 
@@ -29,10 +29,10 @@ public class PickUpController {
      * @param dto CreatePickUpDto payload.
      * @return generated pickUpId.
      */
-    @PostMapping
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public String createPickUp(@Valid @RequestBody CreatePickUpDto dto) {
-        logger.info("POST /api/pickups - payload: {}", dto);
+        logger.info("POST /pickup/create - payload: {}", dto);
         String id = pickUpService.createPickUp(dto);
         logger.debug("Created PickUp with ID: {}", id);
         return id;
@@ -42,10 +42,10 @@ public class PickUpController {
      * Delete an existing PickUp.
      * @param id identifier of the pickup to delete.
      */
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletePickUp(@PathVariable String id) {
-        logger.info("DELETE /api/pickups/{}", id);
+        logger.info("DELETE /pickup/delete/{}", id);
         pickUpService.deletePickUp(id);
         logger.debug("Deleted PickUp with ID: {}", id);
     }
@@ -54,9 +54,9 @@ public class PickUpController {
      * List all pickups.
      * @return list of PickUpDto.
      */
-    @GetMapping
+    @GetMapping("/all")
     public List<PickUpDto> listAllPickUps() {
-        logger.info("GET /api/pickups");
+        logger.info("GET /pickup/all");
         List<PickUpDto> all = pickUpService.listAllPickUps();
         logger.debug("Returning {} pickups", all.size());
         return all;
@@ -67,9 +67,9 @@ public class PickUpController {
      * @param id identifier to fetch.
      * @return PickUpDto for that ID.
      */
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public PickUpDto getPickUpById(@PathVariable String id) {
-        logger.info("GET /api/pickups/{}", id);
+        logger.info("GET /pickup/get/{}", id);
         PickUpDto dto = pickUpService.getPickUpById(id);
         logger.debug("Fetched PickUp: {}", dto);
         return dto;
