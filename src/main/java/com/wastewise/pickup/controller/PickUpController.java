@@ -1,7 +1,6 @@
 package com.wastewise.pickup.controller;
 
 import com.wastewise.pickup.dto.CreatePickUpDto;
-import com.wastewise.pickup.dto.DeletePickUpResponseDto;
 import com.wastewise.pickup.dto.PickUpDto;
 import com.wastewise.pickup.service.PickUpService;
 import jakarta.validation.Valid;
@@ -17,59 +16,41 @@ import java.util.List;
  * REST controller for PickUp endpoints.
  */
 @RestController
-@RequestMapping("/pickup")
+@RequestMapping("/pickups")
 @RequiredArgsConstructor
 public class PickUpController {
 
     private static final Logger logger = LoggerFactory.getLogger(PickUpController.class);
     private final PickUpService pickUpService;
 
-    /**
-     * Create a new PickUp.
-     * @param dto CreatePickUpDto payload.
-     * @return generated pickUpId.
-     */
-    @PostMapping("/create")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public String createPickUp(@Valid @RequestBody CreatePickUpDto dto) {
-        logger.info("POST /pickup/create - payload: {}", dto);
+        logger.info("POST /pickups - payload: {}", dto);
         String id = pickUpService.createPickUp(dto);
         logger.debug("Created PickUp with ID: {}", id);
         return id;
     }
 
-    /**
-     * Delete an existing PickUp.
-     * @param id identifier of the pickup to delete.
-     */
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletePickUp(@PathVariable String id) {
-        logger.info("DELETE /pickup/delete/{}", id);
+        logger.info("DELETE /pickups/{}", id);
         pickUpService.deletePickUp(id);
         logger.debug("Deleted PickUp with ID: {}", id);
     }
 
-    /**
-     * List all pickups.
-     * @return list of PickUpDto.
-     */
-    @GetMapping("/all")
+    @GetMapping
     public List<PickUpDto> listAllPickUps() {
-        logger.info("GET /pickup/all");
+        logger.info("GET /pickups");
         List<PickUpDto> all = pickUpService.listAllPickUps();
         logger.debug("Returning {} pickups", all.size());
         return all;
     }
 
-    /**
-     * Get a single PickUp by ID.
-     * @param id identifier to fetch.
-     * @return PickUpDto for that ID.
-     */
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     public PickUpDto getPickUpById(@PathVariable String id) {
-        logger.info("GET /pickup/get/{}", id);
+        logger.info("GET /pickups/{}", id);
         PickUpDto dto = pickUpService.getPickUpById(id);
         logger.debug("Fetched PickUp: {}", dto);
         return dto;
