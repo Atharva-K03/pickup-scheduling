@@ -5,8 +5,7 @@ import com.wastewise.pickup.model.enums.PickUpStatus;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
 
@@ -15,13 +14,14 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Table(name = "pickups")
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PickUp {
 
-    private static final Logger logger = LoggerFactory.getLogger(PickUp.class);
+@Slf4j
+public class PickUp {
 
     @Id
     private String id;
@@ -51,7 +51,7 @@ public class PickUp {
      */
     @PrePersist
     public void prePersist() {
-        logger.info("About to persist new PickUp with ID: {}", this.id);
+        log.info("About to persist new PickUp with ID: {}", this.id);
     }
 
     /**
@@ -59,6 +59,6 @@ public class PickUp {
      */
     @PreRemove
     public void preRemove() {
-        logger.info("About to remove PickUp with ID: {}", this.id);
+        log.info("About to remove PickUp with ID: {}", this.id);
     }
 }

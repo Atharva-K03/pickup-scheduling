@@ -1,24 +1,28 @@
-2025-06-03 11:56:35.045 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
-2025-06-03 11:56:35.189 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 31176 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
-2025-06-03 11:56:35.191 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-03 11:56:35.192 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-03 11:56:35.293 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-06-03 11:56:35.294 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-06-03 11:56:37.851 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-03 11:56:38.194 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 299 ms. Found 1 JPA repository interface.
-2025-06-03 11:56:39.014 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=b5349bef-2b5d-35ac-88da-60a941ae696e
-2025-06-03 11:56:40.485 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-03 11:56:40.627 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5331 ms
-2025-06-03 11:56:41.313 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-03 11:56:41.563 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-03 11:56:41.612 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-03 11:56:42.097 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-03 11:56:42.136 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-03 11:56:42.718 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f533671
-2025-06-03 11:56:42.721 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-03 11:56:42.817 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-03 11:56:42.819 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-03 11:56:42.881 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2025-06-04 11:33:10.902 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-06-04 11:33:11.008 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 19368 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
+2025-06-04 11:33:11.008 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-04 11:33:11.009 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-04 11:33:11.068 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-04 11:33:11.068 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-04 11:33:12.746 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-04 11:33:12.991 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 230 ms. Found 1 JPA repository interface.
+2025-06-04 11:33:13.321 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=70d7edd2-4510-38eb-aefd-de318fb7544a
+2025-06-04 11:33:14.355 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-04 11:33:14.380 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-06-04 11:33:14.383 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-04 11:33:14.384 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-04 11:33:14.499 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-04 11:33:14.500 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3429 ms
+2025-06-04 11:33:14.882 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-04 11:33:15.023 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-04 11:33:15.086 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-04 11:33:15.598 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-04 11:33:15.646 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-04 11:33:16.077 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@227aa404
+2025-06-04 11:33:16.079 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-04 11:33:16.145 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-04 11:33:16.146 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-04 11:33:16.166 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0
@@ -26,297 +30,19 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-06-03 11:56:44.083 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-03 11:56:44.525 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-03 11:56:45.386 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-03 11:56:46.442 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2025-06-03 11:56:46.783 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
-2025-06-03 11:56:46.807 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 13.248 seconds (process running for 14.538)
-2025-06-03 11:56:46.813 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-03 11:56:46.820 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-06-03 11:56:46.875 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-03 11:56:46.916 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-03 11:56:46.927 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-03 12:02:41.263 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
-2025-06-03 12:02:41.416 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 7372 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
-2025-06-03 12:02:41.421 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-03 12:02:41.422 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-03 12:02:41.549 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-06-03 12:02:41.549 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-06-03 12:02:43.111 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-03 12:02:43.304 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 151 ms. Found 1 JPA repository interface.
-2025-06-03 12:02:43.721 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=b5349bef-2b5d-35ac-88da-60a941ae696e
-2025-06-03 12:02:44.855 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-03 12:02:44.919 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
-2025-06-03 12:02:44.924 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-03 12:02:44.925 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
-2025-06-03 12:02:45.016 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-03 12:02:45.017 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3464 ms
-2025-06-03 12:02:45.489 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-03 12:02:45.632 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
-2025-06-03 12:02:45.702 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-03 12:02:46.405 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-03 12:02:46.439 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-03 12:02:46.966 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@60428dfd
-2025-06-03 12:02:46.969 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-03 12:02:47.045 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-03 12:02:47.046 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-03 12:02:47.066 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-03 12:02:48.142 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-03 12:02:48.555 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-03 12:02:49.473 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-03 12:02:50.468 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2025-06-03 12:02:50.740 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
-2025-06-03 12:02:50.767 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
-2025-06-03 12:02:50.790 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 10.634 seconds (process running for 11.672)
-2025-06-03 12:03:17.058 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-03 12:03:17.058 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-03 12:03:17.060 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2025-06-03 12:03:17.120 [http-nio-8081-exec-1] ERROR c.w.p.e.GlobalExceptionHandler - Unhandled exception: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickup.
-	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
-	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-06-03 12:03:17.251 [http-nio-8081-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickup.]
-2025-06-03 12:03:39.948 [http-nio-8081-exec-6] ERROR c.w.p.e.GlobalExceptionHandler - Unhandled exception: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickups.
-	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
-	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-06-03 12:03:39.950 [http-nio-8081-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickups.]
-2025-06-03 12:04:05.836 [http-nio-8081-exec-10] ERROR c.w.p.e.GlobalExceptionHandler - Unhandled exception: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickups.
-	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
-	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-06-03 12:04:05.838 [http-nio-8081-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickups.]
-2025-06-03 12:04:07.517 [http-nio-8081-exec-8] ERROR c.w.p.e.GlobalExceptionHandler - Unhandled exception: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickups.
-	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
-	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-06-03 12:04:07.518 [http-nio-8081-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickups.]
-2025-06-03 12:04:08.798 [http-nio-8081-exec-3] ERROR c.w.p.e.GlobalExceptionHandler - Unhandled exception: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickups.
-	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
-	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-06-03 12:04:08.800 [http-nio-8081-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickups.]
-2025-06-03 12:04:24.458 [http-nio-8081-exec-1] ERROR c.w.p.e.GlobalExceptionHandler - MethodArgumentNotValidException: timeSlotStart: timeSlotStart must be in the future
-2025-06-03 12:04:24.460 [http-nio-8081-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.wastewise.pickup.controller.PickUpController.createPickUp(com.wastewise.pickup.dto.CreatePickUpDto) with 2 errors: [Field error in object 'createPickUpDto' on field 'timeSlotStart': rejected value [2025-06-03T08:05]; codes [Future.createPickUpDto.timeSlotStart,Future.timeSlotStart,Future.java.time.LocalDateTime,Future]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [createPickUpDto.timeSlotStart,timeSlotStart]; arguments []; default message [timeSlotStart]]; default message [timeSlotStart must be in the future]] [Field error in object 'createPickUpDto' on field 'timeSlotEnd': rejected value [2025-06-03T09:08]; codes [Future.createPickUpDto.timeSlotEnd,Future.timeSlotEnd,Future.java.time.LocalDateTime,Future]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [createPickUpDto.timeSlotEnd,timeSlotEnd]; arguments []; default message [timeSlotEnd]]; default message [timeSlotEnd must be in the future]] ]
-2025-06-03 12:05:02.541 [http-nio-8081-exec-4] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-04T08:11, timeSlotEnd=2025-06-04T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
-2025-06-03 12:05:02.562 [http-nio-8081-exec-4] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-04T08:11, timeSlotEnd=2025-06-04T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
-2025-06-03 12:05:02.563 [http-nio-8081-exec-4] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
-2025-06-03 12:05:02.564 [http-nio-8081-exec-4] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
-2025-06-03 12:05:02.564 [http-nio-8081-exec-4] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
-2025-06-03 12:05:02.733 [http-nio-8081-exec-4] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P001
-2025-06-03 12:05:02.759 [http-nio-8081-exec-4] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P001
-2025-06-03 12:05:02.759 [http-nio-8081-exec-4] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
-2025-06-03 12:05:02.832 [http-nio-8081-exec-4] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P001
-2025-06-03 12:05:19.510 [http-nio-8081-exec-5] ERROR c.w.p.e.GlobalExceptionHandler - Unhandled exception: 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickup.
+2025-06-04 11:33:17.675 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-04 11:33:18.261 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 11:33:19.441 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-04 11:33:20.185 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-04 11:33:20.446 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-06-04 11:33:20.480 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-06-04 11:33:20.505 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 10.592 seconds (process running for 11.869)
+2025-06-04 11:33:34.956 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-04 11:33:34.956 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-04 11:33:34.956 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-06-04 11:33:35.697 [http-nio-8081-exec-2] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 634 ms
+2025-06-04 11:33:35.886 [http-nio-8081-exec-1] ERROR c.w.p.e.GlobalExceptionHandler - Unhandled exception: 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
@@ -359,30 +85,900 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-06-03 12:05:19.513 [http-nio-8081-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickup.]
-2025-06-03 12:05:24.529 [http-nio-8081-exec-10] INFO  c.w.p.controller.PickUpController - GET /pickups
-2025-06-03 12:05:24.529 [http-nio-8081-exec-10] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
-2025-06-03 12:05:24.713 [http-nio-8081-exec-10] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 1 pickups
-2025-06-03 12:05:24.719 [http-nio-8081-exec-10] DEBUG c.w.p.controller.PickUpController - Returning 1 pickups
-2025-06-03 12:05:41.238 [http-nio-8081-exec-8] INFO  c.w.p.controller.PickUpController - GET /pickups/P001
-2025-06-03 12:05:41.239 [http-nio-8081-exec-8] INFO  c.w.p.service.impl.PickUpServiceImpl - Fetching PickUp by ID: P001
-2025-06-03 12:05:41.250 [http-nio-8081-exec-8] DEBUG c.w.p.controller.PickUpController - Fetched PickUp: PickUpDto(id=P001, zoneId=Z099, timeSlotStart=2025-06-04T08:11, timeSlotEnd=2025-06-04T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010, status=NOT_STARTED)
-2025-06-03 12:06:05.023 [http-nio-8081-exec-9] INFO  c.w.p.controller.PickUpController - DELETE /pickups/P001
-2025-06-03 12:06:05.025 [http-nio-8081-exec-9] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to delete PickUp ID: P001
-2025-06-03 12:06:05.041 [http-nio-8081-exec-9] INFO  com.wastewise.pickup.model.PickUp - About to remove PickUp with ID: P001
-2025-06-03 12:06:05.045 [http-nio-8081-exec-9] INFO  c.w.p.service.impl.PickUpServiceImpl - Deleted PickUp ID: P001
-2025-06-03 12:06:05.046 [http-nio-8081-exec-9] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Freed vehicle and workers, and logged deletion.
-2025-06-03 12:06:05.064 [http-nio-8081-exec-9] DEBUG c.w.p.controller.PickUpController - Deleted PickUp with ID: P001
-2025-06-03 12:06:14.800 [http-nio-8081-exec-3] INFO  c.w.p.controller.PickUpController - GET /pickups
-2025-06-03 12:06:14.800 [http-nio-8081-exec-3] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
-2025-06-03 12:06:14.809 [http-nio-8081-exec-3] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 0 pickups
-2025-06-03 12:06:14.809 [http-nio-8081-exec-3] DEBUG c.w.p.controller.PickUpController - Returning 0 pickups
-2025-06-03 12:06:18.495 [http-nio-8081-exec-2] INFO  c.w.p.controller.PickUpController - GET /pickups/P001
-2025-06-03 12:06:18.495 [http-nio-8081-exec-2] INFO  c.w.p.service.impl.PickUpServiceImpl - Fetching PickUp by ID: P001
-2025-06-03 12:06:18.505 [http-nio-8081-exec-2] ERROR c.w.p.e.GlobalExceptionHandler - PickUpNotFoundException: PickUp not found with ID: P001
-2025-06-03 12:06:18.506 [http-nio-8081-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.wastewise.pickup.exception.PickUpNotFoundException: PickUp not found with ID: P001]
-2025-06-03 12:07:18.257 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-03 12:07:18.264 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-06-03 12:07:18.304 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-03 12:07:18.336 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-03 12:07:18.344 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-04 11:33:35.916 [http-nio-8081-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-06-04 11:35:49.206 [http-nio-8081-exec-3] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 11:35:49.208 [http-nio-8081-exec-3] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 11:35:49.481 [http-nio-8081-exec-3] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 0 pickups
+2025-06-04 11:35:49.481 [http-nio-8081-exec-3] DEBUG c.w.p.controller.PickUpController - Returning 0 pickups
+2025-06-04 11:50:11.332 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-04 11:50:11.337 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-04 11:50:11.367 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 11:50:11.401 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-04 11:50:11.409 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-04 12:42:44.507 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-06-04 12:42:44.654 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 1292 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
+2025-06-04 12:42:44.656 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-04 12:42:44.659 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-04 12:42:44.800 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-04 12:42:44.801 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-04 12:42:47.709 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-04 12:42:48.013 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 267 ms. Found 1 JPA repository interface.
+2025-06-04 12:42:48.401 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=70d7edd2-4510-38eb-aefd-de318fb7544a
+2025-06-04 12:42:49.607 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-04 12:42:49.641 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-06-04 12:42:49.645 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-04 12:42:49.646 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-04 12:42:49.746 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-04 12:42:49.747 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4944 ms
+2025-06-04 12:42:50.141 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-04 12:42:50.267 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-04 12:42:50.352 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-04 12:42:50.945 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-04 12:42:50.980 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-04 12:42:51.547 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d93a081
+2025-06-04 12:42:51.551 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-04 12:42:51.621 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-04 12:42:51.622 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-04 12:42:51.651 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-04 12:42:52.888 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-04 12:42:53.458 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 12:42:54.984 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-04 12:42:56.059 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-04 12:42:56.328 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-06-04 12:42:56.355 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-06-04 12:42:56.379 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 13.434 seconds (process running for 15.296)
+2025-06-04 12:43:05.527 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-04 12:43:05.527 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-04 12:43:05.527 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-06-04 12:43:07.619 [http-nio-8081-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1310 ms
+2025-06-04 12:44:04.330 [http-nio-8081-exec-10] ERROR c.w.p.e.GlobalExceptionHandler - MethodArgumentNotValidException: timeSlotEnd: timeSlotEnd must be in the future
+2025-06-04 12:44:04.350 [http-nio-8081-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.String> com.wastewise.pickup.controller.PickUpController.createPickUp(com.wastewise.pickup.dto.CreatePickUpDto) with 2 errors: [Field error in object 'createPickUpDto' on field 'timeSlotEnd': rejected value [2025-06-04T07:13:52.858]; codes [Future.createPickUpDto.timeSlotEnd,Future.timeSlotEnd,Future.java.time.LocalDateTime,Future]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [createPickUpDto.timeSlotEnd,timeSlotEnd]; arguments []; default message [timeSlotEnd]]; default message [timeSlotEnd must be in the future]] [Field error in object 'createPickUpDto' on field 'timeSlotStart': rejected value [2025-06-04T07:13:52.858]; codes [Future.createPickUpDto.timeSlotStart,Future.timeSlotStart,Future.java.time.LocalDateTime,Future]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [createPickUpDto.timeSlotStart,timeSlotStart]; arguments []; default message [timeSlotStart]]; default message [timeSlotStart must be in the future]] ]
+2025-06-04 13:42:18.521 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=56m56s820ms900µs700ns).
+2025-06-04 13:43:25.455 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-04 13:43:25.465 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-04 13:43:25.510 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 13:43:25.576 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-04 13:43:25.589 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-04 13:43:42.956 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-06-04 13:43:43.115 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 32560 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
+2025-06-04 13:43:43.117 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-04 13:43:43.120 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-04 13:43:43.260 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-04 13:43:43.261 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-04 13:43:46.084 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-04 13:43:46.449 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 323 ms. Found 1 JPA repository interface.
+2025-06-04 13:43:47.135 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=70d7edd2-4510-38eb-aefd-de318fb7544a
+2025-06-04 13:43:48.454 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-04 13:43:48.495 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-06-04 13:43:48.498 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-04 13:43:48.499 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-04 13:43:48.682 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-04 13:43:48.684 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5420 ms
+2025-06-04 13:43:49.201 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-04 13:43:49.440 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-04 13:43:49.532 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-04 13:43:50.672 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-04 13:43:50.742 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-04 13:43:51.426 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@53fca333
+2025-06-04 13:43:51.433 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-04 13:43:51.542 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-04 13:43:51.544 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-04 13:43:51.602 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-04 13:43:53.020 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-04 13:43:53.669 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 13:43:55.502 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-04 13:43:56.730 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-04 13:43:57.010 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-06-04 13:43:57.058 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-06-04 13:43:57.091 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 15.858 seconds (process running for 17.913)
+2025-06-04 13:44:21.903 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-04 13:44:21.903 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-04 13:44:21.911 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2025-06-04 13:44:22.585 [http-nio-8081-exec-1] ERROR c.w.p.e.GlobalExceptionHandler - MethodArgumentNotValidException: timeSlotStart: timeSlotStart must be in the future
+2025-06-04 13:44:22.699 [http-nio-8081-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.String> com.wastewise.pickup.controller.PickUpController.createPickUp(com.wastewise.pickup.dto.CreatePickUpDto) with 2 errors: [Field error in object 'createPickUpDto' on field 'timeSlotStart': rejected value [2025-06-04T08:11]; codes [Future.createPickUpDto.timeSlotStart,Future.timeSlotStart,Future.java.time.LocalDateTime,Future]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [createPickUpDto.timeSlotStart,timeSlotStart]; arguments []; default message [timeSlotStart]]; default message [timeSlotStart must be in the future]] [Field error in object 'createPickUpDto' on field 'timeSlotEnd': rejected value [2025-06-04T09:12]; codes [Future.createPickUpDto.timeSlotEnd,Future.timeSlotEnd,Future.java.time.LocalDateTime,Future]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [createPickUpDto.timeSlotEnd,timeSlotEnd]; arguments []; default message [timeSlotEnd]]; default message [timeSlotEnd must be in the future]] ]
+2025-06-04 13:44:40.289 [http-nio-8081-exec-4] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 13:44:40.330 [http-nio-8081-exec-4] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 13:44:40.330 [http-nio-8081-exec-4] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 13:44:40.330 [http-nio-8081-exec-4] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 13:44:40.330 [http-nio-8081-exec-4] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 13:44:40.607 [http-nio-8081-exec-4] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P001
+2025-06-04 13:44:40.656 [http-nio-8081-exec-4] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P001
+2025-06-04 13:44:40.656 [http-nio-8081-exec-4] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 13:44:40.788 [http-nio-8081-exec-4] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P001
+2025-06-04 13:44:46.303 [http-nio-8081-exec-5] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 13:44:46.303 [http-nio-8081-exec-5] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 13:44:46.627 [http-nio-8081-exec-5] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 1 pickups
+2025-06-04 13:44:46.637 [http-nio-8081-exec-5] DEBUG c.w.p.controller.PickUpController - Returning 1 pickups
+2025-06-04 13:44:53.589 [http-nio-8081-exec-6] INFO  c.w.p.controller.PickUpController - GET /pickups/P001
+2025-06-04 13:44:53.597 [http-nio-8081-exec-6] INFO  c.w.p.service.impl.PickUpServiceImpl - Fetching PickUp by ID: P001
+2025-06-04 13:44:53.621 [http-nio-8081-exec-6] DEBUG c.w.p.controller.PickUpController - Fetched PickUp: PickUpDto(id=P001, zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010, status=NOT_STARTED)
+2025-06-04 13:45:00.498 [http-nio-8081-exec-7] INFO  c.w.p.controller.PickUpController - DELETE /pickups/P001
+2025-06-04 13:45:00.506 [http-nio-8081-exec-7] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to delete PickUp ID: P001
+2025-06-04 13:45:00.522 [http-nio-8081-exec-7] INFO  com.wastewise.pickup.model.PickUp - About to remove PickUp with ID: P001
+2025-06-04 13:45:00.530 [http-nio-8081-exec-7] INFO  c.w.p.service.impl.PickUpServiceImpl - Deleted PickUp ID: P001
+2025-06-04 13:45:00.530 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Freed vehicle and workers, and logged deletion.
+2025-06-04 13:45:00.561 [http-nio-8081-exec-7] DEBUG c.w.p.controller.PickUpController - Deleted PickUp with ID: P001
+2025-06-04 13:45:06.102 [http-nio-8081-exec-8] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 13:45:06.102 [http-nio-8081-exec-8] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 13:45:06.118 [http-nio-8081-exec-8] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 0 pickups
+2025-06-04 13:45:06.118 [http-nio-8081-exec-8] DEBUG c.w.p.controller.PickUpController - Returning 0 pickups
+2025-06-04 13:45:15.646 [http-nio-8081-exec-9] INFO  c.w.p.controller.PickUpController - DELETE /pickups/P001
+2025-06-04 13:45:15.658 [http-nio-8081-exec-9] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to delete PickUp ID: P001
+2025-06-04 13:45:15.684 [http-nio-8081-exec-9] ERROR c.w.p.e.GlobalExceptionHandler - PickUpNotFoundException: PickUp not found with ID: P001
+2025-06-04 13:45:15.684 [http-nio-8081-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.wastewise.pickup.exception.PickUpNotFoundException: PickUp not found with ID: P001]
+2025-06-04 13:48:48.468 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-04 13:48:48.476 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-04 13:48:48.514 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 13:48:48.564 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-04 13:48:48.577 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-04 14:12:03.740 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-06-04 14:12:03.816 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 28568 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
+2025-06-04 14:12:03.817 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-04 14:12:03.818 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-04 14:12:03.875 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-04 14:12:03.875 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-04 14:12:05.272 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-04 14:12:05.431 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 144 ms. Found 1 JPA repository interface.
+2025-06-04 14:12:05.705 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=70d7edd2-4510-38eb-aefd-de318fb7544a
+2025-06-04 14:12:06.357 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-04 14:12:06.371 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-06-04 14:12:06.372 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-04 14:12:06.372 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-04 14:12:06.438 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-04 14:12:06.439 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2562 ms
+2025-06-04 14:12:06.760 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-04 14:12:06.870 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-04 14:12:06.928 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-04 14:12:07.299 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-04 14:12:07.327 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-04 14:12:07.704 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ea532cd
+2025-06-04 14:12:07.707 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-04 14:12:07.765 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-04 14:12:07.767 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-04 14:12:07.793 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-04 14:12:08.631 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-04 14:12:09.035 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 14:12:10.097 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-04 14:12:10.732 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-04 14:12:10.872 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-06-04 14:12:10.887 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-06-04 14:12:10.912 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 7.907 seconds (process running for 8.879)
+2025-06-04 14:12:30.148 [http-nio-8081-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-04 14:12:30.149 [http-nio-8081-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-04 14:12:30.151 [http-nio-8081-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-04 14:12:30.376 [http-nio-8081-exec-5] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:12:30.392 [http-nio-8081-exec-5] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:12:30.393 [http-nio-8081-exec-5] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 14:12:30.393 [http-nio-8081-exec-5] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 14:12:30.393 [http-nio-8081-exec-5] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 14:12:30.505 [http-nio-8081-exec-5] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P001
+2025-06-04 14:12:30.524 [http-nio-8081-exec-5] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P001
+2025-06-04 14:12:30.524 [http-nio-8081-exec-5] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 14:12:30.573 [http-nio-8081-exec-5] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P001
+2025-06-04 14:12:35.764 [http-nio-8081-exec-3] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 14:12:35.765 [http-nio-8081-exec-3] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 14:12:35.889 [http-nio-8081-exec-3] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 1 pickups
+2025-06-04 14:12:35.892 [http-nio-8081-exec-3] DEBUG c.w.p.controller.PickUpController - Returning 1 pickups
+2025-06-04 14:12:50.519 [http-nio-8081-exec-4] INFO  c.w.p.controller.PickUpController - GET /pickups/P001
+2025-06-04 14:12:50.519 [http-nio-8081-exec-4] INFO  c.w.p.service.impl.PickUpServiceImpl - Fetching PickUp by ID: P001
+2025-06-04 14:12:50.532 [http-nio-8081-exec-4] DEBUG c.w.p.controller.PickUpController - Fetched PickUp: PickUpDto(id=P001, zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010, status=NOT_STARTED)
+2025-06-04 14:12:57.970 [http-nio-8081-exec-9] INFO  c.w.p.controller.PickUpController - DELETE /pickups/P001
+2025-06-04 14:12:57.972 [http-nio-8081-exec-9] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to delete PickUp ID: P001
+2025-06-04 14:12:57.980 [http-nio-8081-exec-9] INFO  com.wastewise.pickup.model.PickUp - About to remove PickUp with ID: P001
+2025-06-04 14:12:57.982 [http-nio-8081-exec-9] INFO  c.w.p.service.impl.PickUpServiceImpl - Deleted PickUp ID: P001
+2025-06-04 14:12:57.982 [http-nio-8081-exec-9] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Freed vehicle and workers, and logged deletion.
+2025-06-04 14:12:57.996 [http-nio-8081-exec-9] DEBUG c.w.p.controller.PickUpController - Deleted PickUp with ID: P001
+2025-06-04 14:13:05.426 [http-nio-8081-exec-6] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:05.428 [http-nio-8081-exec-6] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:05.429 [http-nio-8081-exec-6] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 14:13:05.429 [http-nio-8081-exec-6] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 14:13:05.429 [http-nio-8081-exec-6] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 14:13:05.432 [http-nio-8081-exec-6] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P002
+2025-06-04 14:13:05.432 [http-nio-8081-exec-6] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P002
+2025-06-04 14:13:05.432 [http-nio-8081-exec-6] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 14:13:05.443 [http-nio-8081-exec-6] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P002
+2025-06-04 14:13:09.605 [http-nio-8081-exec-10] INFO  c.w.p.controller.PickUpController - DELETE /pickups/P001
+2025-06-04 14:13:09.609 [http-nio-8081-exec-10] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to delete PickUp ID: P001
+2025-06-04 14:13:09.620 [http-nio-8081-exec-10] ERROR c.w.p.e.GlobalExceptionHandler - PickUpNotFoundException: PickUp not found with ID: P001
+2025-06-04 14:13:09.629 [http-nio-8081-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.wastewise.pickup.exception.PickUpNotFoundException: PickUp not found with ID: P001]
+2025-06-04 14:13:13.019 [http-nio-8081-exec-2] INFO  c.w.p.controller.PickUpController - DELETE /pickups/P001
+2025-06-04 14:13:13.021 [http-nio-8081-exec-2] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to delete PickUp ID: P001
+2025-06-04 14:13:13.025 [http-nio-8081-exec-2] ERROR c.w.p.e.GlobalExceptionHandler - PickUpNotFoundException: PickUp not found with ID: P001
+2025-06-04 14:13:13.026 [http-nio-8081-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.wastewise.pickup.exception.PickUpNotFoundException: PickUp not found with ID: P001]
+2025-06-04 14:13:17.056 [http-nio-8081-exec-7] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:17.060 [http-nio-8081-exec-7] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:17.060 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 14:13:17.060 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 14:13:17.060 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 14:13:17.063 [http-nio-8081-exec-7] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P003
+2025-06-04 14:13:17.063 [http-nio-8081-exec-7] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P003
+2025-06-04 14:13:17.063 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 14:13:17.074 [http-nio-8081-exec-7] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P003
+2025-06-04 14:13:18.550 [http-nio-8081-exec-8] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:18.553 [http-nio-8081-exec-8] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:18.553 [http-nio-8081-exec-8] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 14:13:18.553 [http-nio-8081-exec-8] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 14:13:18.553 [http-nio-8081-exec-8] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 14:13:18.555 [http-nio-8081-exec-8] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P004
+2025-06-04 14:13:18.556 [http-nio-8081-exec-8] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P004
+2025-06-04 14:13:18.556 [http-nio-8081-exec-8] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 14:13:18.567 [http-nio-8081-exec-8] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P004
+2025-06-04 14:13:19.515 [http-nio-8081-exec-1] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:19.516 [http-nio-8081-exec-1] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:19.516 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 14:13:19.516 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 14:13:19.516 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 14:13:19.519 [http-nio-8081-exec-1] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P005
+2025-06-04 14:13:19.519 [http-nio-8081-exec-1] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P005
+2025-06-04 14:13:19.519 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 14:13:19.530 [http-nio-8081-exec-1] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P005
+2025-06-04 14:13:20.417 [http-nio-8081-exec-5] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:20.418 [http-nio-8081-exec-5] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:20.418 [http-nio-8081-exec-5] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 14:13:20.418 [http-nio-8081-exec-5] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 14:13:20.418 [http-nio-8081-exec-5] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 14:13:20.420 [http-nio-8081-exec-5] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P006
+2025-06-04 14:13:20.421 [http-nio-8081-exec-5] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P006
+2025-06-04 14:13:20.421 [http-nio-8081-exec-5] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 14:13:20.430 [http-nio-8081-exec-5] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P006
+2025-06-04 14:13:21.363 [http-nio-8081-exec-3] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:21.365 [http-nio-8081-exec-3] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:21.365 [http-nio-8081-exec-3] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 14:13:21.365 [http-nio-8081-exec-3] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 14:13:21.365 [http-nio-8081-exec-3] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 14:13:21.368 [http-nio-8081-exec-3] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P007
+2025-06-04 14:13:21.368 [http-nio-8081-exec-3] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P007
+2025-06-04 14:13:21.368 [http-nio-8081-exec-3] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 14:13:21.378 [http-nio-8081-exec-3] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P007
+2025-06-04 14:13:22.216 [http-nio-8081-exec-4] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:22.219 [http-nio-8081-exec-4] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:22.219 [http-nio-8081-exec-4] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 14:13:22.219 [http-nio-8081-exec-4] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 14:13:22.219 [http-nio-8081-exec-4] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 14:13:22.223 [http-nio-8081-exec-4] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P008
+2025-06-04 14:13:22.224 [http-nio-8081-exec-4] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P008
+2025-06-04 14:13:22.224 [http-nio-8081-exec-4] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 14:13:22.234 [http-nio-8081-exec-4] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P008
+2025-06-04 14:13:23.463 [http-nio-8081-exec-9] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:23.465 [http-nio-8081-exec-9] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:23.465 [http-nio-8081-exec-9] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 14:13:23.466 [http-nio-8081-exec-9] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 14:13:23.466 [http-nio-8081-exec-9] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 14:13:23.468 [http-nio-8081-exec-9] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P009
+2025-06-04 14:13:23.469 [http-nio-8081-exec-9] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P009
+2025-06-04 14:13:23.469 [http-nio-8081-exec-9] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 14:13:23.480 [http-nio-8081-exec-9] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P009
+2025-06-04 14:13:23.919 [http-nio-8081-exec-6] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:23.921 [http-nio-8081-exec-6] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:13:23.921 [http-nio-8081-exec-6] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 14:13:23.921 [http-nio-8081-exec-6] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 14:13:23.921 [http-nio-8081-exec-6] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 14:13:23.925 [http-nio-8081-exec-6] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P010
+2025-06-04 14:13:23.926 [http-nio-8081-exec-6] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P010
+2025-06-04 14:13:23.926 [http-nio-8081-exec-6] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 14:13:23.936 [http-nio-8081-exec-6] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P010
+2025-06-04 14:13:27.167 [http-nio-8081-exec-10] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 14:13:27.167 [http-nio-8081-exec-10] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 14:13:27.177 [http-nio-8081-exec-10] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 9 pickups
+2025-06-04 14:13:27.177 [http-nio-8081-exec-10] DEBUG c.w.p.controller.PickUpController - Returning 9 pickups
+2025-06-04 14:13:28.396 [http-nio-8081-exec-2] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 14:13:28.396 [http-nio-8081-exec-2] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 14:13:28.411 [http-nio-8081-exec-2] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 9 pickups
+2025-06-04 14:13:28.411 [http-nio-8081-exec-2] DEBUG c.w.p.controller.PickUpController - Returning 9 pickups
+2025-06-04 14:13:29.399 [http-nio-8081-exec-7] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 14:13:29.400 [http-nio-8081-exec-7] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 14:13:29.409 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 9 pickups
+2025-06-04 14:13:29.410 [http-nio-8081-exec-7] DEBUG c.w.p.controller.PickUpController - Returning 9 pickups
+2025-06-04 14:13:30.558 [http-nio-8081-exec-8] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 14:13:30.558 [http-nio-8081-exec-8] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 14:13:30.568 [http-nio-8081-exec-8] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 9 pickups
+2025-06-04 14:13:30.569 [http-nio-8081-exec-8] DEBUG c.w.p.controller.PickUpController - Returning 9 pickups
+2025-06-04 14:13:31.481 [http-nio-8081-exec-1] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 14:13:31.481 [http-nio-8081-exec-1] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 14:13:31.494 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 9 pickups
+2025-06-04 14:13:31.494 [http-nio-8081-exec-1] DEBUG c.w.p.controller.PickUpController - Returning 9 pickups
+2025-06-04 14:13:32.406 [http-nio-8081-exec-5] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 14:13:32.406 [http-nio-8081-exec-5] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 14:13:32.418 [http-nio-8081-exec-5] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 9 pickups
+2025-06-04 14:13:32.418 [http-nio-8081-exec-5] DEBUG c.w.p.controller.PickUpController - Returning 9 pickups
+2025-06-04 14:13:33.327 [http-nio-8081-exec-3] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 14:13:33.327 [http-nio-8081-exec-3] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 14:13:33.338 [http-nio-8081-exec-3] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 9 pickups
+2025-06-04 14:13:33.339 [http-nio-8081-exec-3] DEBUG c.w.p.controller.PickUpController - Returning 9 pickups
+2025-06-04 14:13:34.256 [http-nio-8081-exec-4] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 14:13:34.256 [http-nio-8081-exec-4] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 14:13:34.266 [http-nio-8081-exec-4] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 9 pickups
+2025-06-04 14:13:34.267 [http-nio-8081-exec-4] DEBUG c.w.p.controller.PickUpController - Returning 9 pickups
+2025-06-04 14:13:35.307 [http-nio-8081-exec-9] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 14:13:35.308 [http-nio-8081-exec-9] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 14:13:35.317 [http-nio-8081-exec-9] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 9 pickups
+2025-06-04 14:13:35.318 [http-nio-8081-exec-9] DEBUG c.w.p.controller.PickUpController - Returning 9 pickups
+2025-06-04 14:13:55.593 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-04 14:13:55.602 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-04 14:13:55.639 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 14:13:55.671 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-04 14:13:55.682 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-04 14:20:18.441 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-06-04 14:20:18.509 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 23676 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
+2025-06-04 14:20:18.510 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-04 14:20:18.511 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-04 14:20:18.591 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-04 14:20:18.591 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-04 14:20:19.793 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-04 14:20:19.969 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 160 ms. Found 1 JPA repository interface.
+2025-06-04 14:20:20.301 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=70d7edd2-4510-38eb-aefd-de318fb7544a
+2025-06-04 14:20:21.073 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-04 14:20:21.100 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-06-04 14:20:21.103 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-04 14:20:21.103 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-04 14:20:21.201 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-04 14:20:21.202 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2609 ms
+2025-06-04 14:20:21.548 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-04 14:20:21.636 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-04 14:20:21.698 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-04 14:20:22.039 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-04 14:20:22.066 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-04 14:20:22.389 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@297fae81
+2025-06-04 14:20:22.393 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-04 14:20:22.446 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-04 14:20:22.447 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-04 14:20:22.465 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-04 14:20:23.237 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-04 14:20:23.627 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 14:20:24.443 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-04 14:20:24.954 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-04 14:20:25.132 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-06-04 14:20:25.169 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-06-04 14:20:25.192 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 7.455 seconds (process running for 8.295)
+2025-06-04 14:20:37.038 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-04 14:20:37.043 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-04 14:20:37.068 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 14:20:37.098 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-04 14:20:37.103 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-04 14:26:45.001 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-06-04 14:26:45.074 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 10528 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
+2025-06-04 14:26:45.076 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-04 14:26:45.077 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-04 14:26:45.120 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-04 14:26:45.120 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-04 14:26:46.356 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-04 14:26:46.533 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 159 ms. Found 1 JPA repository interface.
+2025-06-04 14:26:46.821 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=70d7edd2-4510-38eb-aefd-de318fb7544a
+2025-06-04 14:26:47.518 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-04 14:26:47.536 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-06-04 14:26:47.539 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-04 14:26:47.539 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-04 14:26:47.617 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-04 14:26:47.619 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2497 ms
+2025-06-04 14:26:47.918 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-04 14:26:48.010 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-04 14:26:48.064 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-04 14:26:48.493 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-04 14:26:48.514 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-04 14:26:48.826 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6f55cc35
+2025-06-04 14:26:48.828 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-04 14:26:48.872 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-04 14:26:48.873 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-04 14:26:48.896 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-04 14:26:49.753 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-04 14:26:50.121 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 14:26:50.999 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-04 14:26:51.606 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-04 14:26:51.763 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-06-04 14:26:51.792 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-06-04 14:26:51.810 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 7.549 seconds (process running for 8.408)
+2025-06-04 14:26:59.161 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-04 14:26:59.161 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-04 14:26:59.162 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-04 14:26:59.282 [http-nio-8081-exec-1] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:26:59.290 [http-nio-8081-exec-1] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:26:59.290 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 14:26:59.290 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 14:26:59.290 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 14:26:59.339 [http-nio-8081-exec-1] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P001
+2025-06-04 14:26:59.345 [http-nio-8081-exec-1] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P001
+2025-06-04 14:26:59.345 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 14:26:59.376 [http-nio-8081-exec-1] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P001
+2025-06-04 14:27:03.158 [http-nio-8081-exec-2] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-04 14:27:03.159 [http-nio-8081-exec-2] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-04 14:27:03.299 [http-nio-8081-exec-2] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 1 pickups
+2025-06-04 14:27:03.303 [http-nio-8081-exec-2] DEBUG c.w.p.controller.PickUpController - Returning 1 pickups
+2025-06-04 14:40:08.375 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-04 14:40:08.380 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-04 14:40:08.410 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 14:40:08.447 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-04 14:40:08.454 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-04 14:51:09.341 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-06-04 14:51:09.407 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 32288 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
+2025-06-04 14:51:09.408 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-04 14:51:09.409 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-04 14:51:09.465 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-04 14:51:09.465 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-04 14:51:10.737 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-04 14:51:10.912 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 157 ms. Found 1 JPA repository interface.
+2025-06-04 14:51:11.217 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=70d7edd2-4510-38eb-aefd-de318fb7544a
+2025-06-04 14:51:11.937 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-04 14:51:11.958 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-06-04 14:51:11.967 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-04 14:51:11.967 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-04 14:51:12.057 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-04 14:51:12.058 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2590 ms
+2025-06-04 14:51:12.394 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-04 14:51:12.479 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-04 14:51:12.506 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-04 14:51:12.835 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-04 14:51:12.856 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-04 14:51:13.176 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f9e36bd
+2025-06-04 14:51:13.181 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-04 14:51:13.221 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-04 14:51:13.223 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-04 14:51:13.245 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-04 14:51:14.003 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-04 14:51:14.415 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 14:51:15.311 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-04 14:51:16.005 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-04 14:51:16.159 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-06-04 14:51:16.177 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-06-04 14:51:16.195 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 7.665 seconds (process running for 8.512)
+2025-06-04 14:51:32.330 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-04 14:51:32.330 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-04 14:51:32.345 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-06-04 14:51:32.393 [http-nio-8081-exec-1] ERROR c.w.p.e.GlobalExceptionHandler - Unhandled exception: 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource wastewise/scheduler.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-04 14:51:32.488 [http-nio-8081-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource wastewise/scheduler.]
+2025-06-04 14:52:07.064 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-04 14:52:07.069 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-04 14:52:07.092 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 14:52:07.123 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-04 14:52:07.129 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-04 14:52:44.947 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-06-04 14:52:44.999 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 3596 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
+2025-06-04 14:52:45.000 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-04 14:52:45.000 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-04 14:52:45.045 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-04 14:52:45.045 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-04 14:52:46.319 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-04 14:52:46.470 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 132 ms. Found 1 JPA repository interface.
+2025-06-04 14:52:46.732 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=70d7edd2-4510-38eb-aefd-de318fb7544a
+2025-06-04 14:52:47.432 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-04 14:52:47.450 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-06-04 14:52:47.452 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-04 14:52:47.452 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-04 14:52:47.516 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-04 14:52:47.517 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2470 ms
+2025-06-04 14:52:47.827 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-04 14:52:47.903 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-04 14:52:47.959 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-04 14:52:48.344 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-04 14:52:48.375 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-04 14:52:48.666 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f9e36bd
+2025-06-04 14:52:48.670 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-04 14:52:48.714 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-04 14:52:48.716 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-04 14:52:48.738 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-04 14:52:49.500 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-04 14:52:49.875 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 14:52:50.772 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-04 14:52:51.482 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-04 14:52:51.623 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-06-04 14:52:51.640 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-06-04 14:52:51.657 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 7.475 seconds (process running for 8.334)
+2025-06-04 14:53:07.498 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-04 14:53:07.498 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-04 14:53:07.499 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-06-04 14:53:07.520 [http-nio-8081-exec-1] ERROR c.w.p.e.GlobalExceptionHandler - Unhandled exception: 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource wastewise/scheduler.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-04 14:53:07.585 [http-nio-8081-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource wastewise/scheduler.]
+2025-06-04 14:57:10.446 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-04 14:57:10.450 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-04 14:57:10.474 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 14:57:10.504 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-04 14:57:10.514 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-04 14:59:30.125 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-06-04 14:59:30.182 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 19120 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
+2025-06-04 14:59:30.182 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-04 14:59:30.183 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-04 14:59:30.245 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-04 14:59:30.245 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-04 14:59:31.492 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-04 14:59:31.712 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 194 ms. Found 1 JPA repository interface.
+2025-06-04 14:59:32.044 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=70d7edd2-4510-38eb-aefd-de318fb7544a
+2025-06-04 14:59:32.727 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-04 14:59:32.742 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-06-04 14:59:32.744 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-04 14:59:32.744 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-04 14:59:32.803 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-04 14:59:32.805 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2558 ms
+2025-06-04 14:59:33.112 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-04 14:59:33.194 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-04 14:59:33.252 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-04 14:59:33.614 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-04 14:59:33.640 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-04 14:59:34.027 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@61184b29
+2025-06-04 14:59:34.028 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-04 14:59:34.074 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-04 14:59:34.075 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-04 14:59:34.095 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-04 14:59:34.907 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-04 14:59:35.276 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 14:59:36.141 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-04 14:59:36.729 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-04 14:59:36.918 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-06-04 14:59:36.953 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-06-04 14:59:36.973 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 7.532 seconds (process running for 8.395)
+2025-06-04 14:59:41.231 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-04 14:59:41.232 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-04 14:59:41.233 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-04 14:59:41.389 [http-nio-8081-exec-1] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:59:41.398 [http-nio-8081-exec-1] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 14:59:41.398 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 14:59:41.398 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 14:59:41.398 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 14:59:41.467 [http-nio-8081-exec-1] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P001
+2025-06-04 14:59:41.478 [http-nio-8081-exec-1] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P001
+2025-06-04 14:59:41.478 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 14:59:41.515 [http-nio-8081-exec-1] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P001
+2025-06-04 15:37:32.762 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-04 15:37:32.774 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-04 15:37:32.845 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 15:37:32.906 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-04 15:37:32.923 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-04 15:39:25.997 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-06-04 15:39:26.096 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 20520 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
+2025-06-04 15:39:26.099 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-04 15:39:26.104 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-04 15:39:26.256 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-04 15:39:26.257 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-04 15:39:28.720 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-04 15:39:29.032 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 261 ms. Found 1 JPA repository interface.
+2025-06-04 15:39:29.614 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=70d7edd2-4510-38eb-aefd-de318fb7544a
+2025-06-04 15:39:30.714 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-04 15:39:30.743 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-06-04 15:39:30.747 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-04 15:39:30.748 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-04 15:39:30.840 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-04 15:39:30.843 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4583 ms
+2025-06-04 15:39:31.559 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-04 15:39:31.838 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-04 15:39:31.992 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-04 15:39:32.666 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-04 15:39:32.710 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-04 15:39:33.315 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d93a081
+2025-06-04 15:39:33.317 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-04 15:39:33.411 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-04 15:39:33.412 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-04 15:39:33.472 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-04 15:39:34.919 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-04 15:39:35.489 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 15:39:37.017 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-04 15:39:38.220 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-04 15:39:38.479 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-06-04 15:39:38.517 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-06-04 15:39:38.569 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 13.967 seconds (process running for 16.139)
+2025-06-04 15:40:00.539 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-04 15:40:00.539 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-04 15:40:00.539 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-06-04 15:40:01.156 [http-nio-8081-exec-1] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 15:40:01.196 [http-nio-8081-exec-1] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z099, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 15:40:01.196 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z099 validated
+2025-06-04 15:40:01.196 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 15:40:01.196 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 15:40:01.471 [http-nio-8081-exec-1] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P001
+2025-06-04 15:40:01.519 [http-nio-8081-exec-1] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P001
+2025-06-04 15:40:01.519 [http-nio-8081-exec-1] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 15:40:01.634 [http-nio-8081-exec-1] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P001
+2025-06-04 15:40:09.042 [http-nio-8081-exec-7] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z029, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 15:40:09.050 [http-nio-8081-exec-7] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z029, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 15:40:09.050 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z029 validated
+2025-06-04 15:40:09.050 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 15:40:09.050 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 15:40:09.050 [http-nio-8081-exec-7] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P002
+2025-06-04 15:40:09.050 [http-nio-8081-exec-7] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P002
+2025-06-04 15:40:09.050 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 15:40:09.067 [http-nio-8081-exec-7] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P002
+2025-06-04 15:40:20.422 [http-nio-8081-exec-4] ERROR c.w.p.e.GlobalExceptionHandler - Unhandled exception: 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickups/wastewise/scheduler/P002.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-04 15:40:20.496 [http-nio-8081-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickups/wastewise/scheduler/P002.]
+2025-06-04 15:40:33.501 [http-nio-8081-exec-6] ERROR c.w.p.e.GlobalExceptionHandler - Unhandled exception: 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickups/wastewise/P002.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-04 15:40:33.501 [http-nio-8081-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource pickups/wastewise/P002.]
+2025-06-04 15:41:10.759 [http-nio-8081-exec-8] INFO  c.w.p.controller.PickUpController - DELETE /pickups/P002
+2025-06-04 15:41:10.759 [http-nio-8081-exec-8] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to delete PickUp ID: P002
+2025-06-04 15:41:10.800 [http-nio-8081-exec-8] INFO  com.wastewise.pickup.model.PickUp - About to remove PickUp with ID: P002
+2025-06-04 15:41:10.808 [http-nio-8081-exec-8] INFO  c.w.p.service.impl.PickUpServiceImpl - Deleted PickUp ID: P002
+2025-06-04 15:41:10.808 [http-nio-8081-exec-8] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Freed vehicle and workers, and logged deletion.
+2025-06-04 15:41:10.832 [http-nio-8081-exec-8] DEBUG c.w.p.controller.PickUpController - Deleted PickUp with ID: P002
+2025-06-04 15:41:16.647 [http-nio-8081-exec-9] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z029, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 15:41:16.647 [http-nio-8081-exec-9] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z029, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-04 15:41:16.647 [http-nio-8081-exec-9] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z029 validated
+2025-06-04 15:41:16.647 [http-nio-8081-exec-9] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-04 15:41:16.647 [http-nio-8081-exec-9] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-04 15:41:16.663 [http-nio-8081-exec-9] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P003
+2025-06-04 15:41:16.663 [http-nio-8081-exec-9] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P003
+2025-06-04 15:41:16.663 [http-nio-8081-exec-9] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-04 15:41:16.679 [http-nio-8081-exec-9] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P003
+2025-06-04 15:47:52.266 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-04 15:47:52.280 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-04 15:47:52.333 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 15:47:52.378 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-04 15:47:52.392 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-04 16:13:45.988 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-06-04 16:13:46.171 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 10476 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
+2025-06-04 16:13:46.176 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-04 16:13:46.178 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-04 16:13:46.373 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-04 16:13:46.373 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-04 16:13:49.476 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-04 16:13:49.950 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 413 ms. Found 1 JPA repository interface.
+2025-06-04 16:13:50.700 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=70d7edd2-4510-38eb-aefd-de318fb7544a
+2025-06-04 16:13:52.459 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-04 16:13:52.507 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-06-04 16:13:52.515 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-04 16:13:52.515 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-04 16:13:52.703 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-04 16:13:52.708 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6328 ms
+2025-06-04 16:13:53.308 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-04 16:13:53.516 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-04 16:13:53.624 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-04 16:13:54.630 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-04 16:13:54.689 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-04 16:13:55.544 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@427c6337
+2025-06-04 16:13:55.553 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-04 16:13:55.801 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-04 16:13:55.813 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-04 16:13:55.929 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-04 16:13:57.783 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-04 16:13:57.936 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 16:13:59.995 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-04 16:14:01.417 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-04 16:14:01.777 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-06-04 16:14:01.820 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-06-04 16:14:01.856 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 17.724 seconds (process running for 20.189)
+2025-06-04 16:14:06.946 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-04 16:14:06.947 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-04 16:14:06.950 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-04 16:14:08.925 [http-nio-8081-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1002 ms
+2025-06-04 16:23:03.843 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m8s53ms295µs500ns).
+2025-06-04 16:23:11.091 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-04 16:23:11.112 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-04 16:23:11.195 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-04 16:23:11.204 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-04 16:23:11.229 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
