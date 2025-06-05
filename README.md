@@ -25,18 +25,45 @@ The **Pickup Scheduling Module** is designed to manage and schedule pickups effi
 ---
 
 ## **Getting Started**
-To get a working copy of the project for development or testing, follow these instructions.
 
-### **1. Clone the Repository**
-```bash
-git clone <REMOTE_URL>
-```
-Replace `<REMOTE_URL>` with the URL of the GitHub (or other) repository.
+To clone the Pickup Scheduling Module repository and set it up on your local machine, follow the steps below:
 
-### **2. Navigate to the Directory**
-```bash
-cd pickup-scheduling-module
-```
+### **1. Open a Terminal**
+   Open a terminal or command prompt on your computer where Git is installed.
+
+### **2. Run the Git Clone Command**
+   Use the following command to clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/Atharva-K03/pickup-scheduling.git
+   ```
+
+### **3. Navigate to the Cloned Directory**
+   After cloning, move into the project directory by running:
+   ```bash
+   cd pickup-scheduling
+   ```
+
+### **4. Verify the Repository**
+   Ensure the repository is cloned correctly by listing the files in the directory:
+   - **Mac/Linux**:
+     ```bash
+     ls
+     ```
+   - **Windows**:
+     ```bash
+     dir
+     ```
+
+   You should see the project files, including:
+   ```
+   src/
+   pom.xml
+   README.md
+   ```
+
+---
+
+Once you’ve done this, you can proceed to follow the [Installation](#installation) and [Database Configuration](#database-configuration) sections to set up and run the project locally.
 
 ---
 
