@@ -1,0 +1,550 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > PickUpServiceImpl</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.wastewise.pickup.service.impl</a>
+</div>
+
+<h1>Coverage Summary for Class: PickUpServiceImpl (com.wastewise.pickup.service.impl)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PickUpServiceImpl</td>
+<td class="coverageStat">
+  <span class="percent">
+    28.6%
+  </span>
+  <span class="absValue">
+    (2/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    5.9%
+  </span>
+  <span class="absValue">
+    (4/68)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">PickUpServiceImpl$$SpringCGLIB$$0</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    28.6%
+  </span>
+  <span class="absValue">
+    (2/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    5.9%
+  </span>
+  <span class="absValue">
+    (4/68)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;//// File: src/main/java/com/wastewise/pickup/service/impl/PickUpServiceImpl.java
+&nbsp;//package com.wastewise.pickup.service.impl;
+&nbsp;//
+&nbsp;//import com.wastewise.pickup.dto.CreatePickUpDto;
+&nbsp;//import com.wastewise.pickup.dto.DeletePickUpResponseDto;
+&nbsp;//import com.wastewise.pickup.dto.PickUpDto;
+&nbsp;//import com.wastewise.pickup.model.enums.PickUpStatus;
+&nbsp;//import com.wastewise.pickup.exception.InvalidPickUpRequestException;
+&nbsp;//import com.wastewise.pickup.exception.PickUpNotFoundException;
+&nbsp;//import com.wastewise.pickup.model.PickUp;
+&nbsp;//import com.wastewise.pickup.repository.PickUpRepository;
+&nbsp;//import com.wastewise.pickup.service.PickUpService;
+&nbsp;//import com.wastewise.pickup.utility.IdGenerator;
+&nbsp;//import lombok.AllArgsConstructor;
+&nbsp;//import lombok.Data;
+&nbsp;//import org.slf4j.Logger;
+&nbsp;//import org.slf4j.LoggerFactory;
+&nbsp;//import org.springframework.beans.factory.annotation.Value;
+&nbsp;//import org.springframework.stereotype.Service;
+&nbsp;//import org.springframework.transaction.annotation.Transactional;
+&nbsp;//import org.springframework.web.reactive.function.client.WebClient;
+&nbsp;//
+&nbsp;//import java.time.Duration;
+&nbsp;//import java.util.List;
+&nbsp;//import java.util.stream.Collectors;
+&nbsp;//
+&nbsp;///**
+&nbsp;// * Implementation of PickUpService.
+&nbsp;// */
+&nbsp;//@Service
+&nbsp;//public class PickUpServiceImpl implements PickUpService {
+&nbsp;//
+&nbsp;//    private static final Logger logger = LoggerFactory.getLogger(PickUpServiceImpl.class);
+&nbsp;//
+&nbsp;//    private final PickUpRepository repository;
+&nbsp;//    private final IdGenerator idGenerator;
+&nbsp;//    private final WebClient webClient;
+&nbsp;//    private final String zoneServiceUrl;
+&nbsp;//    private final String vehicleServiceUrl;
+&nbsp;//    private final String workerServiceUrl;
+&nbsp;//    private final String loggingServiceUrl;
+&nbsp;//
+&nbsp;//    public PickUpServiceImpl(
+&nbsp;//            PickUpRepository repository,
+&nbsp;//            IdGenerator idGenerator,
+&nbsp;//            WebClient.Builder webClientBuilder,
+&nbsp;//            @Value(&quot;${zone-service.url}&quot;) String zoneServiceUrl,
+&nbsp;//            @Value(&quot;${vehicle-service.url}&quot;) String vehicleServiceUrl,
+&nbsp;//            @Value(&quot;${worker-service.url}&quot;) String workerServiceUrl,
+&nbsp;//            @Value(&quot;${logging-service.url}&quot;) String loggingServiceUrl) {
+&nbsp;//        this.repository = repository;
+&nbsp;//        this.idGenerator = idGenerator;
+&nbsp;//        this.webClient = webClientBuilder.build();
+&nbsp;//        this.zoneServiceUrl = zoneServiceUrl;
+&nbsp;//        this.vehicleServiceUrl = vehicleServiceUrl;
+&nbsp;//        this.workerServiceUrl = workerServiceUrl;
+&nbsp;//        this.loggingServiceUrl = loggingServiceUrl;
+&nbsp;//    }
+&nbsp;//
+&nbsp;//    @Override
+&nbsp;//    @Transactional
+&nbsp;//    public String createPickUp(CreatePickUpDto dto) {
+&nbsp;//        logger.info(&quot;Received request to create PickUp: {}&quot;, dto);
+&nbsp;//
+&nbsp;//        // 1. Validate time window
+&nbsp;//        if (dto.getTimeSlotEnd().isBefore(dto.getTimeSlotStart().plusMinutes(30))) {
+&nbsp;//            throw new InvalidPickUpRequestException(&quot;End time must be at least 30 minutes after start time.&quot;);
+&nbsp;//        }
+&nbsp;//
+&nbsp;//        // 2. Verify zone exists
+&nbsp;//        Boolean zoneExists = webClient.get()
+&nbsp;//                .uri(zoneServiceUrl + &quot;/api/zones/{zoneId}&quot;, dto.getZoneId())
+&nbsp;//                .retrieve()
+&nbsp;//                .bodyToMono(Boolean.class)
+&nbsp;//                .block(Duration.ofSeconds(5));
+&nbsp;//        if (zoneExists == null || !zoneExists) {
+&nbsp;//            throw new InvalidPickUpRequestException(&quot;Zone not found: &quot; + dto.getZoneId());
+&nbsp;//        }
+&nbsp;//        logger.debug(&quot;Zone {} validated&quot;, dto.getZoneId());
+&nbsp;//
+&nbsp;//        // 3. Calculate buffer window
+&nbsp;//        var bufferStart = dto.getTimeSlotStart().minusMinutes(30);
+&nbsp;//        var bufferEnd = dto.getTimeSlotEnd().plusMinutes(30);
+&nbsp;//
+&nbsp;//        // 4. Fetch available vehicles
+&nbsp;//        List&lt;String&gt; availableVehicles = webClient.get()
+&nbsp;//                .uri(vehicleServiceUrl + &quot;/api/vehicles/available?zoneId={zoneId}&amp;start={start}&amp;end={end}&quot;,
+&nbsp;//                        dto.getZoneId(), dto.getTimeSlotStart(), dto.getTimeSlotEnd())
+&nbsp;//                .retrieve()
+&nbsp;//                .bodyToFlux(String.class)
+&nbsp;//                .collectList()
+&nbsp;//                .block(Duration.ofSeconds(5));
+&nbsp;//        if (availableVehicles == null || !availableVehicles.contains(dto.getVehicleId())) {
+&nbsp;//            throw new InvalidPickUpRequestException(&quot;Vehicle not available: &quot; + dto.getVehicleId());
+&nbsp;//        }
+&nbsp;//        logger.debug(&quot;Vehicle {} validated&quot;, dto.getVehicleId());
+&nbsp;//
+&nbsp;//        // 5. Fetch available workers (2)
+&nbsp;//        List&lt;String&gt; availableWorkers = webClient.get()
+&nbsp;//                .uri(uriBuilder -&gt; uriBuilder
+&nbsp;//                        .path(workerServiceUrl + &quot;/api/workers/available&quot;)
+&nbsp;//                        .queryParam(&quot;count&quot;, 2)
+&nbsp;//                        .queryParam(&quot;start&quot;, dto.getTimeSlotStart())
+&nbsp;//                        .queryParam(&quot;end&quot;, dto.getTimeSlotEnd())
+&nbsp;//                        .build())
+&nbsp;//                .retrieve()
+&nbsp;//                .bodyToFlux(String.class)
+&nbsp;//                .collectList()
+&nbsp;//                .block(Duration.ofSeconds(5));
+&nbsp;//        if (availableWorkers == null
+&nbsp;//                || !availableWorkers.contains(dto.getWorker1Id())
+&nbsp;//                || !availableWorkers.contains(dto.getWorker2Id())
+&nbsp;//                || dto.getWorker1Id().equals(dto.getWorker2Id())) {
+&nbsp;//            throw new InvalidPickUpRequestException(&quot;One or both workers not available or identical.&quot;);
+&nbsp;//        }
+&nbsp;//        logger.debug(&quot;Workers {} and {} validated&quot;, dto.getWorker1Id(), dto.getWorker2Id());
+&nbsp;//
+&nbsp;//        // 6. Generate ID and persist
+&nbsp;//        String newId = idGenerator.generatePickUpId();
+&nbsp;//        PickUp pickUp = PickUp.builder()
+&nbsp;//                .id(newId)
+&nbsp;//                .zoneId(dto.getZoneId())
+&nbsp;//                .timeSlotStart(dto.getTimeSlotStart())
+&nbsp;//                .timeSlotEnd(dto.getTimeSlotEnd())
+&nbsp;//                .frequency(dto.getFrequency())
+&nbsp;//                .locationName(dto.getLocationName())
+&nbsp;//                .vehicleId(dto.getVehicleId())
+&nbsp;//                .worker1Id(dto.getWorker1Id())
+&nbsp;//                .worker2Id(dto.getWorker2Id())
+&nbsp;//                .status(PickUpStatus.NOT_STARTED)
+&nbsp;//                .build();
+&nbsp;//        repository.save(pickUp);
+&nbsp;//        logger.info(&quot;Persisted PickUp with ID: {}&quot;, newId);
+&nbsp;//
+&nbsp;//        // 7. Notify logging module
+&nbsp;//        webClient.post()
+&nbsp;//                .uri(loggingServiceUrl + &quot;/api/logs&quot;)
+&nbsp;//                .bodyValue(
+&nbsp;//                        new LogEntry(&quot;CREATE_PICKUP&quot;, &quot;Created PickUp ID: &quot; + newId)
+&nbsp;//                )
+&nbsp;//                .retrieve()
+&nbsp;//                .bodyToMono(Void.class)
+&nbsp;//                .block(Duration.ofSeconds(5));
+&nbsp;//        logger.debug(&quot;Logged creation event for PickUp ID: {}&quot;, newId);
+&nbsp;//
+&nbsp;//        // 8. Occupy vehicle and workers
+&nbsp;//        webClient.put()
+&nbsp;//                .uri(vehicleServiceUrl + &quot;/api/vehicles/occupy/{vehicleId}&quot;, dto.getVehicleId())
+&nbsp;//                .retrieve()
+&nbsp;//                .bodyToMono(Void.class)
+&nbsp;//                .block(Duration.ofSeconds(5));
+&nbsp;//        logger.debug(&quot;Vehicle {} marked occupied&quot;, dto.getVehicleId());
+&nbsp;//
+&nbsp;//        webClient.put()
+&nbsp;//                .uri(workerServiceUrl + &quot;/api/workers/occupy/{workerId}&quot;, dto.getWorker1Id())
+&nbsp;//                .retrieve()
+&nbsp;//                .bodyToMono(Void.class)
+&nbsp;//                .block(Duration.ofSeconds(5));
+&nbsp;//        webClient.put()
+&nbsp;//                .uri(workerServiceUrl + &quot;/api/workers/occupy/{workerId}&quot;, dto.getWorker2Id())
+&nbsp;//                .retrieve()
+&nbsp;//                .bodyToMono(Void.class)
+&nbsp;//                .block(Duration.ofSeconds(5));
+&nbsp;//        logger.debug(&quot;Workers {} and {} marked occupied&quot;, dto.getWorker1Id(), dto.getWorker2Id());
+&nbsp;//
+&nbsp;//        return newId;
+&nbsp;//    }
+&nbsp;//
+&nbsp;//    @Override
+&nbsp;//    @Transactional
+&nbsp;//    public DeletePickUpResponseDto deletePickUp(String pickUpId) {
+&nbsp;//        logger.info(&quot;Received request to delete PickUp ID: {}&quot;, pickUpId);
+&nbsp;//
+&nbsp;//        PickUp existing = repository.findById(pickUpId)
+&nbsp;//                .orElseThrow(() -&gt; new PickUpNotFoundException(pickUpId));
+&nbsp;//
+&nbsp;//        // 1. Free vehicle
+&nbsp;//        webClient.put()
+&nbsp;//                .uri(vehicleServiceUrl + &quot;/api/vehicles/free/{vehicleId}&quot;, existing.getVehicleId())
+&nbsp;//                .retrieve()
+&nbsp;//                .bodyToMono(Void.class)
+&nbsp;//                .block(Duration.ofSeconds(5));
+&nbsp;//        logger.debug(&quot;Vehicle {} freed&quot;, existing.getVehicleId());
+&nbsp;//
+&nbsp;//        // 2. Free workers
+&nbsp;//        webClient.put()
+&nbsp;//                .uri(workerServiceUrl + &quot;/api/workers/free/{workerId}&quot;, existing.getWorker1Id())
+&nbsp;//                .retrieve()
+&nbsp;//                .bodyToMono(Void.class)
+&nbsp;//                .block(Duration.ofSeconds(5));
+&nbsp;//        webClient.put()
+&nbsp;//                .uri(workerServiceUrl + &quot;/api/workers/free/{workerId}&quot;, existing.getWorker2Id())
+&nbsp;//                .retrieve()
+&nbsp;//                .bodyToMono(Void.class)
+&nbsp;//                .block(Duration.ofSeconds(5));
+&nbsp;//        logger.debug(&quot;Workers {} and {} freed&quot;, existing.getWorker1Id(), existing.getWorker2Id());
+&nbsp;//
+&nbsp;//        // 3. Delete entity
+&nbsp;//        repository.delete(existing);
+&nbsp;//        logger.info(&quot;Deleted PickUp ID: {}&quot;, pickUpId);
+&nbsp;//
+&nbsp;//        // 4. Notify logging
+&nbsp;//        webClient.post()
+&nbsp;//                .uri(loggingServiceUrl + &quot;/api/logs&quot;)
+&nbsp;//                .bodyValue(new LogEntry(&quot;DELETE_PICKUP&quot;, &quot;Deleted PickUp ID: &quot; + pickUpId))
+&nbsp;//                .retrieve()
+&nbsp;//                .bodyToMono(Void.class)
+&nbsp;//                .block(Duration.ofSeconds(5));
+&nbsp;//        logger.debug(&quot;Logged deletion event for PickUp ID: {}&quot;, pickUpId);
+&nbsp;//
+&nbsp;//        return new DeletePickUpResponseDto(pickUpId, &quot;DELETED&quot;);
+&nbsp;//    }
+&nbsp;//
+&nbsp;//    @Override
+&nbsp;//    public List&lt;PickUpDto&gt; listAllPickUps() {
+&nbsp;//        logger.info(&quot;Listing all PickUps&quot;);
+&nbsp;//        List&lt;PickUp&gt; all = repository.findAll();
+&nbsp;//        logger.debug(&quot;Found {} pickups&quot;, all.size());
+&nbsp;//        return all.stream()
+&nbsp;//                .map(p -&gt; PickUpDto.builder()
+&nbsp;//                        .id(p.getId())
+&nbsp;//                        .zoneId(p.getZoneId())
+&nbsp;//                        .timeSlotStart(p.getTimeSlotStart())
+&nbsp;//                        .timeSlotEnd(p.getTimeSlotEnd())
+&nbsp;//                        .frequency(p.getFrequency())
+&nbsp;//                        .locationName(p.getLocationName())
+&nbsp;//                        .vehicleId(p.getVehicleId())
+&nbsp;//                        .worker1Id(p.getWorker1Id())
+&nbsp;//                        .worker2Id(p.getWorker2Id())
+&nbsp;//                        .status(p.getStatus())
+&nbsp;//                        .build())
+&nbsp;//                .collect(Collectors.toList());
+&nbsp;//    }
+&nbsp;//
+&nbsp;//    @Override
+&nbsp;//    public PickUpDto getPickUpById(String pickUpId) {
+&nbsp;//        logger.info(&quot;Fetching PickUp by ID: {}&quot;, pickUpId);
+&nbsp;//        PickUp p = repository.findById(pickUpId)
+&nbsp;//                .orElseThrow(() -&gt; new PickUpNotFoundException(pickUpId));
+&nbsp;//        return PickUpDto.builder()
+&nbsp;//                .id(p.getId())
+&nbsp;//                .zoneId(p.getZoneId())
+&nbsp;//                .timeSlotStart(p.getTimeSlotStart())
+&nbsp;//                .timeSlotEnd(p.getTimeSlotEnd())
+&nbsp;//                .frequency(p.getFrequency())
+&nbsp;//                .locationName(p.getLocationName())
+&nbsp;//                .vehicleId(p.getVehicleId())
+&nbsp;//                .worker1Id(p.getWorker1Id())
+&nbsp;//                .worker2Id(p.getWorker2Id())
+&nbsp;//                .status(p.getStatus())
+&nbsp;//                .build();
+&nbsp;//    }
+&nbsp;//
+&nbsp;//    /**
+&nbsp;//     * Inner DTO for logging payload.
+&nbsp;//     */
+&nbsp;//    @Data
+&nbsp;//    @AllArgsConstructor
+&nbsp;//    private static class LogEntry {
+&nbsp;//        private String eventType;
+&nbsp;//        private String details;
+&nbsp;//    }
+&nbsp;//}
+&nbsp;
+&nbsp;package com.wastewise.pickup.service.impl;
+&nbsp;
+&nbsp;import com.wastewise.pickup.dto.CreatePickUpDto;
+&nbsp;import com.wastewise.pickup.dto.DeletePickUpResponseDto;
+&nbsp;import com.wastewise.pickup.dto.PickUpDto;
+&nbsp;import com.wastewise.pickup.model.enums.PickUpStatus;
+&nbsp;import com.wastewise.pickup.exception.InvalidPickUpRequestException;
+&nbsp;import com.wastewise.pickup.exception.PickUpNotFoundException;
+&nbsp;import com.wastewise.pickup.model.PickUp;
+&nbsp;import com.wastewise.pickup.repository.PickUpRepository;
+&nbsp;import com.wastewise.pickup.service.PickUpService;
+&nbsp;import com.wastewise.pickup.utility.IdGenerator;
+&nbsp;import org.slf4j.Logger;
+&nbsp;import org.slf4j.LoggerFactory;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;import org.springframework.transaction.annotation.Transactional;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@Service
+&nbsp;public class PickUpServiceImpl implements PickUpService {
+&nbsp;
+<b class="fc">&nbsp;    private static final Logger logger = LoggerFactory.getLogger(PickUpServiceImpl.class);</b>
+&nbsp;
+&nbsp;    private final PickUpRepository repository;
+&nbsp;    private final IdGenerator idGenerator;
+&nbsp;
+&nbsp;    // Enable mock mode for local testing
+&nbsp;    private static final boolean mockMode = true;
+&nbsp;
+<b class="fc">&nbsp;    public PickUpServiceImpl(PickUpRepository repository, IdGenerator idGenerator) {</b>
+<b class="fc">&nbsp;        this.repository = repository;</b>
+<b class="fc">&nbsp;        this.idGenerator = idGenerator;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    @Transactional
+&nbsp;    public String createPickUp(CreatePickUpDto dto) {
+<b class="nc">&nbsp;        logger.info(&quot;Received request to create PickUp: {}&quot;, dto);</b>
+&nbsp;
+<b class="nc">&nbsp;        if (dto.getTimeSlotEnd().isBefore(dto.getTimeSlotStart().plusMinutes(30))) {</b>
+<b class="nc">&nbsp;            throw new InvalidPickUpRequestException(&quot;End time must be at least 30 minutes after start time.&quot;);</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        // --- Mock zone check ---
+&nbsp;        if (mockMode) {
+<b class="nc">&nbsp;            logger.debug(&quot;MOCK: Zone {} validated&quot;, dto.getZoneId());</b>
+&nbsp;        } else {
+&nbsp;            throw new UnsupportedOperationException(&quot;Zone validation requires remote service.&quot;);
+&nbsp;        }
+&nbsp;
+&nbsp;        // --- Mock available vehicle ---
+&nbsp;        if (mockMode) {
+<b class="nc">&nbsp;            logger.debug(&quot;MOCK: Vehicle {} validated&quot;, dto.getVehicleId());</b>
+&nbsp;        } else {
+&nbsp;            throw new UnsupportedOperationException(&quot;Vehicle validation requires remote service.&quot;);
+&nbsp;        }
+&nbsp;
+&nbsp;        // --- Mock available workers ---
+&nbsp;        if (mockMode) {
+<b class="nc">&nbsp;            if (dto.getWorker1Id().equals(dto.getWorker2Id())) {</b>
+<b class="nc">&nbsp;                throw new InvalidPickUpRequestException(&quot;Worker 1 and Worker 2 cannot be the same.&quot;);</b>
+&nbsp;            }
+<b class="nc">&nbsp;            logger.debug(&quot;MOCK: Workers {} and {} validated&quot;, dto.getWorker1Id(), dto.getWorker2Id());</b>
+&nbsp;        } else {
+&nbsp;            throw new UnsupportedOperationException(&quot;Worker validation requires remote service.&quot;);
+&nbsp;        }
+&nbsp;
+&nbsp;        // --- Save pickup ---
+<b class="nc">&nbsp;        String newId = idGenerator.generatePickUpId();</b>
+<b class="nc">&nbsp;        PickUp pickUp = PickUp.builder()</b>
+<b class="nc">&nbsp;                .id(newId)</b>
+<b class="nc">&nbsp;                .zoneId(dto.getZoneId())</b>
+<b class="nc">&nbsp;                .timeSlotStart(dto.getTimeSlotStart())</b>
+<b class="nc">&nbsp;                .timeSlotEnd(dto.getTimeSlotEnd())</b>
+<b class="nc">&nbsp;                .frequency(dto.getFrequency())</b>
+<b class="nc">&nbsp;                .locationName(dto.getLocationName())</b>
+<b class="nc">&nbsp;                .vehicleId(dto.getVehicleId())</b>
+<b class="nc">&nbsp;                .worker1Id(dto.getWorker1Id())</b>
+<b class="nc">&nbsp;                .worker2Id(dto.getWorker2Id())</b>
+<b class="nc">&nbsp;                .status(PickUpStatus.NOT_STARTED)</b>
+<b class="nc">&nbsp;                .build();</b>
+<b class="nc">&nbsp;        repository.save(pickUp);</b>
+<b class="nc">&nbsp;        logger.info(&quot;Persisted PickUp with ID: {}&quot;, newId);</b>
+&nbsp;
+&nbsp;        // --- Mock logging &amp; occupancy ---
+&nbsp;        if (mockMode) {
+<b class="nc">&nbsp;            logger.debug(&quot;MOCK: Logged creation event and marked resources occupied.&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        return newId;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    @Transactional
+&nbsp;    public DeletePickUpResponseDto deletePickUp(String pickUpId) {
+<b class="nc">&nbsp;        logger.info(&quot;Received request to delete PickUp ID: {}&quot;, pickUpId);</b>
+&nbsp;
+<b class="nc">&nbsp;        PickUp existing = repository.findById(pickUpId)</b>
+<b class="nc">&nbsp;                .orElseThrow(() -&gt; new PickUpNotFoundException(pickUpId));</b>
+&nbsp;
+<b class="nc">&nbsp;        repository.delete(existing);</b>
+<b class="nc">&nbsp;        logger.info(&quot;Deleted PickUp ID: {}&quot;, pickUpId);</b>
+&nbsp;
+&nbsp;        if (mockMode) {
+<b class="nc">&nbsp;            logger.debug(&quot;MOCK: Freed vehicle and workers, and logged deletion.&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        return new DeletePickUpResponseDto(pickUpId, &quot;DELETED&quot;);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public List&lt;PickUpDto&gt; listAllPickUps() {
+<b class="nc">&nbsp;        logger.info(&quot;Listing all PickUps&quot;);</b>
+<b class="nc">&nbsp;        List&lt;PickUp&gt; all = repository.findAll();</b>
+<b class="nc">&nbsp;        logger.debug(&quot;Found {} pickups&quot;, all.size());</b>
+<b class="nc">&nbsp;        return all.stream()</b>
+<b class="nc">&nbsp;                .map(p -&gt; PickUpDto.builder()</b>
+<b class="nc">&nbsp;                        .id(p.getId())</b>
+<b class="nc">&nbsp;                        .zoneId(p.getZoneId())</b>
+<b class="nc">&nbsp;                        .timeSlotStart(p.getTimeSlotStart())</b>
+<b class="nc">&nbsp;                        .timeSlotEnd(p.getTimeSlotEnd())</b>
+<b class="nc">&nbsp;                        .frequency(p.getFrequency())</b>
+<b class="nc">&nbsp;                        .locationName(p.getLocationName())</b>
+<b class="nc">&nbsp;                        .vehicleId(p.getVehicleId())</b>
+<b class="nc">&nbsp;                        .worker1Id(p.getWorker1Id())</b>
+<b class="nc">&nbsp;                        .worker2Id(p.getWorker2Id())</b>
+<b class="nc">&nbsp;                        .status(p.getStatus())</b>
+<b class="nc">&nbsp;                        .build())</b>
+<b class="nc">&nbsp;                        .toList();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public PickUpDto getPickUpById(String pickUpId) {
+<b class="nc">&nbsp;        logger.info(&quot;Fetching PickUp by ID: {}&quot;, pickUpId);</b>
+<b class="nc">&nbsp;        PickUp p = repository.findById(pickUpId)</b>
+<b class="nc">&nbsp;                .orElseThrow(() -&gt; new PickUpNotFoundException(pickUpId));</b>
+<b class="nc">&nbsp;        return PickUpDto.builder()</b>
+<b class="nc">&nbsp;                .id(p.getId())</b>
+<b class="nc">&nbsp;                .zoneId(p.getZoneId())</b>
+<b class="nc">&nbsp;                .timeSlotStart(p.getTimeSlotStart())</b>
+<b class="nc">&nbsp;                .timeSlotEnd(p.getTimeSlotEnd())</b>
+<b class="nc">&nbsp;                .frequency(p.getFrequency())</b>
+<b class="nc">&nbsp;                .locationName(p.getLocationName())</b>
+<b class="nc">&nbsp;                .vehicleId(p.getVehicleId())</b>
+<b class="nc">&nbsp;                .worker1Id(p.getWorker1Id())</b>
+<b class="nc">&nbsp;                .worker2Id(p.getWorker2Id())</b>
+<b class="nc">&nbsp;                .status(p.getStatus())</b>
+<b class="nc">&nbsp;                .build();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-06-03 12:14</div>
+</div>
+</body>
+</html>

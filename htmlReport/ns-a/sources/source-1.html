@@ -1,0 +1,108 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > PickUpService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.wastewise.pickup.service</a>
+</div>
+
+<h1>Coverage Summary for Class: PickUpService (com.wastewise.pickup.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">PickUpService</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.wastewise.pickup.service;
+&nbsp;
+&nbsp;import com.wastewise.pickup.dto.CreatePickUpDto;
+&nbsp;import com.wastewise.pickup.dto.DeletePickUpResponseDto;
+&nbsp;import com.wastewise.pickup.dto.PickUpDto;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;/**
+&nbsp; * Service interface for PickUp operations.
+&nbsp; */
+&nbsp;public interface PickUpService {
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Create a new PickUp job.
+&nbsp;     * @param dto data for creating pickup.
+&nbsp;     * @return generated pickUpId.
+&nbsp;     */
+&nbsp;    String createPickUp(CreatePickUpDto dto);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Delete an existing PickUp by ID.
+&nbsp;     * @param pickUpId identifier to delete.
+&nbsp;     * @return response DTO with deletion status.
+&nbsp;     */
+&nbsp;    DeletePickUpResponseDto deletePickUp(String pickUpId);
+&nbsp;
+&nbsp;    /**
+&nbsp;     * List all pickups for dashboard.
+&nbsp;     * @return list of PickUpDto.
+&nbsp;     */
+&nbsp;    List&lt;PickUpDto&gt; listAllPickUps();
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Get one PickUp by ID.
+&nbsp;     * @param pickUpId identifier to fetch.
+&nbsp;     * @return PickUpDto for the given ID.
+&nbsp;     */
+&nbsp;    PickUpDto getPickUpById(String pickUpId);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-06-03 12:14</div>
+</div>
+</body>
+</html>

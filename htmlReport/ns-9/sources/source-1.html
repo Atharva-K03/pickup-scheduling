@@ -1,0 +1,90 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > PickUpRepository</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.wastewise.pickup.repository</a>
+</div>
+
+<h1>Coverage Summary for Class: PickUpRepository (com.wastewise.pickup.repository)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">PickUpRepository</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;package com.wastewise.pickup.repository;
+&nbsp;
+&nbsp;import com.wastewise.pickup.model.PickUp;
+&nbsp;import org.springframework.data.jpa.repository.JpaRepository;
+&nbsp;import org.springframework.stereotype.Repository;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;/**
+&nbsp; * Repository interface for CRUD operations on PickUp.
+&nbsp; */
+&nbsp;@Repository
+&nbsp;public interface PickUpRepository extends JpaRepository&lt;PickUp, String&gt; {
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Find all pickups by status.
+&nbsp;     * @param status Pickup status filter.
+&nbsp;     * @return list of matching PickUps.
+&nbsp;     */
+&nbsp;    List&lt;PickUp&gt; findByStatus(com.wastewise.pickup.model.enums.PickUpStatus status);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-06-03 12:14</div>
+</div>
+</body>
+</html>

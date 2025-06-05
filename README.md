@@ -95,14 +95,6 @@ Ensure you have the following installed on your system:
 ## **Database Configuration**
 
 ### **1. Database Overview**
-The Pickup Scheduling Module uses the following database tables:
-
-| **Table Name**        | **Description**                                   |
-|-----------------------|---------------------------------------------------|
-| `customers`           | Stores customer details, including name, contact, and preferences. |
-| `schedules`           | Stores details of scheduled pickups (date, time, location, customer ID). |
-| `locations`           | Stores pickup locations and their metadata.       |
-| `users`               | Stores authenticated users for the module.        |
 
 You can find the database schema in the `db/schema.sql` file.
 
@@ -113,7 +105,7 @@ You can find the database schema in the `db/schema.sql` file.
 1. **Create a Database**:
    Open your database client and create a new database:
    ```sql
-   CREATE DATABASE pickup_scheduling;
+   CREATE DATABASE pickupdb;
    ```
 
 2. **Run the Schema Script**:
@@ -126,7 +118,7 @@ You can find the database schema in the `db/schema.sql` file.
    Update the database configurations in `src/main/resources/application.properties`:
 
    ```properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/pickup_scheduling
+   spring.datasource.url=jdbc:mysql://localhost:3306/pickupdb
    spring.datasource.username=<YOUR_USERNAME>
    spring.datasource.password=<YOUR_PASSWORD>
    spring.jpa.hibernate.ddl-auto=update
@@ -144,5 +136,164 @@ SOURCE /path/to/db/data.sql;
 
 ## **Usage**
 
-### **Run the Application**
-Once the application is running, you can access the APIs via the following base URL:
+## **API Endpoints**
+
+The following REST API endpoints are available in the Pickup Scheduling Module. These endpoints allow you to create, delete, retrieve, and list pickups.
+
+---
+
+### **Base URL**
+All endpoints are prefixed with:
+http://localhost:8081/wastewise/scheduler/pickups
+---
+
+### **Endpoints**
+
+#### **1. Create a New Pickup**
+**Description**: Creates a new pickup resource.  
+**Method**: `POST`  
+**URL**:
+/wastewise/scheduler/pickups
+**Request Body**:
+```json
+{
+  "field1": "value1",
+  "field2": "value2"
+}
+```
+*(Replace `field1` and `field2` with the actual fields in the `CreatePickUpDto`.)*
+
+**Response**:
+- **201 Created**: Returns the ID of the newly created pickup.  
+  Example Response:
+  ```json
+  "new_pickup_id"
+  ```
+
+---
+
+#### **2. Delete a Pickup**
+**Description**: Deletes an existing pickup by its ID.  
+**Method**: `DELETE`  
+**URL**:
+/wastewise/scheduler/pickups/{id}
+
+**Path Parameter**:
+- `id` (String): The ID of the pickup to delete.
+
+**Response**:
+- **204 No Content**: Indicates successful deletion.
+
+---
+
+#### **3. List All Pickups**
+**Description**: Retrieves a list of all existing pickups.  
+**Method**: `GET`  
+**URL**:
+/wastewise/scheduler/pickups
+**Response**:
+- **200 OK**: Returns a list of pickups.  
+  Example Response:
+  ```json
+  [
+    {
+      "id": "pickup_id_1",
+      "field": "value"
+    },
+    {
+      "id": "pickup_id_2",
+      "field": "value"
+    }
+  ]
+  ```
+
+---
+
+#### **4. Get Pickup by ID**
+**Description**: Retrieves a specific pickup by its ID.  
+**Method**: `GET`  
+**URL**:
+/wastewise/scheduler/pickups/{id}
+**Path Parameter**:
+- `id` (String): The ID of the pickup to retrieve.
+
+**Response**:
+- **200 OK**: Returns the pickup details.  
+  Example Response:
+  ```json
+  {
+    "id": "pickup_id",
+    "field": "value"
+  }
+  ```
+
+---
+
+### **HTTP Status Codes**
+These endpoints use the following HTTP status codes:
+- **200 OK**: The request was successful.
+- **201 Created**: A new resource was successfully created.
+- **204 No Content**: The resource was successfully deleted.
+- **400 Bad Request**: The request was invalid (e.g., invalid data or missing fields).
+- **404 Not Found**: The requested resource could not be found.
+- **500 Internal Server Error**: An unexpected error occurred on the server.
+
+---
+
+### **Examples**
+
+1. **Create a New Pickup**
+   ```bash
+   curl -X POST http://localhost:8080/wastewise/scheduler/pickups \
+   -H "Content-Type: application/json" \
+   -d '{
+         "field1": "value1",
+         "field2": "value2"
+       }'
+   ```
+   Response:
+   ```json
+   "new_pickup_id"
+   ```
+
+2. **Delete a Pickup**
+   ```bash
+   curl -X DELETE http://localhost:8081/wastewise/scheduler/pickups/{id}
+   ```
+
+3. **List All Pickups**
+   ```bash
+   curl -X GET http://localhost:8081/wastewise/scheduler/pickups
+   ```
+   Response:
+   ```json
+   [
+     {
+       "id": "pickup_id_1",
+       "field": "value"
+     },
+     {
+       "id": "pickup_id_2",
+       "field": "value"
+     }
+   ]
+   ```
+
+4. **Get Pickup by ID**
+   ```bash
+   curl -X GET http://localhost:8081/wastewise/scheduler/pickups/{id}
+   ```
+   Response:
+   ```json
+   {
+     "id": "pickup_id",
+     "field": "value"
+   }
+   ```
+
+---
+
+### **Notes**
+- Replace `{id}` in the URL with the actual ID of the pickup you want to access.
+- Ensure the application is running locally or on the specified host/port before accessing these endpoints.
+- For detailed API testing, tools like **Postman**, **cURL**, or **Swagger** can be used.
