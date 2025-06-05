@@ -65,6 +65,8 @@ INSERT INTO pickups (
     worker2_id,
     status
 )
+
+--
 VALUES (
     'pickup_003',
     'zone_003',

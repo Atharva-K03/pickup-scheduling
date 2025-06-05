@@ -11,3 +11,4 @@ CREATE TABLE pickups (
     worker2_id VARCHAR(255), -- ID of the second assigned worker
     status VARCHAR(50) NOT NULL -- Status of the pickup (e.g., PENDING, COMPLETED, etc.)
 );
+--
