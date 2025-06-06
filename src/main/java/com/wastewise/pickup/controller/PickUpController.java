@@ -16,6 +16,31 @@ import java.util.List;
  * REST controller for managing PickUp operations.
  * Provides endpoints for creating, deleting, retrieving, and listing PickUp resources.
  */
+
+/**
+ * API Endpoints for Pickup Service
+ *
+ * 1)
+ * POST /wastewise/pickups
+ * Description: Create a new pickup task
+ * Response: JSON Body 201 + pickupId
+ *
+ * 2)
+ * GET /wastewise/pickups
+ * Description: List all scheduled pickups
+ * Response: 200 + List<PickUpDto>
+ *
+ * 3)
+ * GET /wastewise/pickups/{pickupId}
+ * Description: Get pickup by ID
+ * Response: 200 + PickUpDto / 404 if not found
+ *
+ * 4)
+ * DELETE /wastewise/pickups/{pickupId}
+ * Description: Delete a pickup by ID
+ * Response: 204 No Content / 404 if not found
+ */
+
 @RestController
 @RequestMapping("/wastewise/scheduler/pickups")
 @RequiredArgsConstructor
@@ -43,14 +68,15 @@ public class PickUpController {
      * Deletes an existing PickUp resource by its ID.
      *
      * @param id the ID of the PickUp to delete
-     * @return a ResponseEntity with HTTP status 204 (No Content)
+     * @return a ResponseEntity containing a success message and HTTP status 200 (OK)
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePickUp(@PathVariable String id) {
+    public ResponseEntity<String> deletePickUp(@PathVariable String id) {
         log.info("DELETE /pickups/{}", id);
         pickUpService.deletePickUp(id);
         log.debug("Deleted PickUp with ID: {}", id);
-        return ResponseEntity.noContent().build();
+        String message = "Pickup with ID " + id + " has been deleted successfully.";
+        return ResponseEntity.ok(message);
     }
 
     /**
