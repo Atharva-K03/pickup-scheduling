@@ -1,36 +1,31 @@
-//// File: src/main/java/com/wastewise/pickup/service/impl/PickUpServiceImpl.java
 //package com.wastewise.pickup.service.impl;
 //
 //import com.wastewise.pickup.dto.CreatePickUpDto;
 //import com.wastewise.pickup.dto.DeletePickUpResponseDto;
 //import com.wastewise.pickup.dto.PickUpDto;
-//import com.wastewise.pickup.model.enums.PickUpStatus;
+//import com.wastewise.pickup.dto.VehicleStatusUpdateDto;
+//import com.wastewise.pickup.dto.WorkerStatusUpdateDto;
 //import com.wastewise.pickup.exception.InvalidPickUpRequestException;
 //import com.wastewise.pickup.exception.PickUpNotFoundException;
 //import com.wastewise.pickup.model.PickUp;
+//import com.wastewise.pickup.model.enums.PickUpStatus;
 //import com.wastewise.pickup.repository.PickUpRepository;
 //import com.wastewise.pickup.service.PickUpService;
 //import com.wastewise.pickup.utility.IdGenerator;
-//import lombok.AllArgsConstructor;
-//import lombok.Data;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
+//import lombok.extern.slf4j.Slf4j;
 //import org.springframework.beans.factory.annotation.Value;
 //import org.springframework.stereotype.Service;
 //import org.springframework.transaction.annotation.Transactional;
 //import org.springframework.web.reactive.function.client.WebClient;
 //
 //import java.time.Duration;
-//import java.util.List;
-//import java.util.stream.Collectors;
 //
 ///**
 // * Implementation of PickUpService.
 // */
 //@Service
+//@Slf4j
 //public class PickUpServiceImpl implements PickUpService {
-//
-//    private static final Logger logger = LoggerFactory.getLogger(PickUpServiceImpl.class);
 //
 //    private final PickUpRepository repository;
 //    private final IdGenerator idGenerator;
@@ -38,36 +33,39 @@
 //    private final String zoneServiceUrl;
 //    private final String vehicleServiceUrl;
 //    private final String workerServiceUrl;
-//    private final String loggingServiceUrl;
 //
+//    /**
+//     * Constructor for PickUpServiceImpl.
+//     */
 //    public PickUpServiceImpl(
 //            PickUpRepository repository,
 //            IdGenerator idGenerator,
 //            WebClient.Builder webClientBuilder,
 //            @Value("${zone-service.url}") String zoneServiceUrl,
 //            @Value("${vehicle-service.url}") String vehicleServiceUrl,
-//            @Value("${worker-service.url}") String workerServiceUrl,
-//            @Value("${logging-service.url}") String loggingServiceUrl) {
+//            @Value("${worker-service.url}") String workerServiceUrl) {
 //        this.repository = repository;
 //        this.idGenerator = idGenerator;
 //        this.webClient = webClientBuilder.build();
 //        this.zoneServiceUrl = zoneServiceUrl;
 //        this.vehicleServiceUrl = vehicleServiceUrl;
 //        this.workerServiceUrl = workerServiceUrl;
-//        this.loggingServiceUrl = loggingServiceUrl;
 //    }
 //
+//    /**
+//     * Creates a new PickUp.
+//     */
 //    @Override
 //    @Transactional
 //    public String createPickUp(CreatePickUpDto dto) {
-//        logger.info("Received request to create PickUp: {}", dto);
+//        log.info("Creating pickup: {}", dto);
 //
-//        // 1. Validate time window
+//        // Validate time slot
 //        if (dto.getTimeSlotEnd().isBefore(dto.getTimeSlotStart().plusMinutes(30))) {
-//            throw new InvalidPickUpRequestException("End time must be at least 30 minutes after start time.");
+//            throw new InvalidPickUpRequestException("Invalid time slot: end time must be at least 30 minutes after start time.");
 //        }
 //
-//        // 2. Verify zone exists
+//        // Validate zone
 //        Boolean zoneExists = webClient.get()
 //                .uri(zoneServiceUrl + "/api/zones/{zoneId}", dto.getZoneId())
 //                .retrieve()
@@ -76,49 +74,11 @@
 //        if (zoneExists == null || !zoneExists) {
 //            throw new InvalidPickUpRequestException("Zone not found: " + dto.getZoneId());
 //        }
-//        logger.debug("Zone {} validated", dto.getZoneId());
 //
-//        // 3. Calculate buffer window
-//        var bufferStart = dto.getTimeSlotStart().minusMinutes(30);
-//        var bufferEnd = dto.getTimeSlotEnd().plusMinutes(30);
-//
-//        // 4. Fetch available vehicles
-//        List<String> availableVehicles = webClient.get()
-//                .uri(vehicleServiceUrl + "/api/vehicles/available?zoneId={zoneId}&start={start}&end={end}",
-//                        dto.getZoneId(), dto.getTimeSlotStart(), dto.getTimeSlotEnd())
-//                .retrieve()
-//                .bodyToFlux(String.class)
-//                .collectList()
-//                .block(Duration.ofSeconds(5));
-//        if (availableVehicles == null || !availableVehicles.contains(dto.getVehicleId())) {
-//            throw new InvalidPickUpRequestException("Vehicle not available: " + dto.getVehicleId());
-//        }
-//        logger.debug("Vehicle {} validated", dto.getVehicleId());
-//
-//        // 5. Fetch available workers (2)
-//        List<String> availableWorkers = webClient.get()
-//                .uri(uriBuilder -> uriBuilder
-//                        .path(workerServiceUrl + "/api/workers/available")
-//                        .queryParam("count", 2)
-//                        .queryParam("start", dto.getTimeSlotStart())
-//                        .queryParam("end", dto.getTimeSlotEnd())
-//                        .build())
-//                .retrieve()
-//                .bodyToFlux(String.class)
-//                .collectList()
-//                .block(Duration.ofSeconds(5));
-//        if (availableWorkers == null
-//                || !availableWorkers.contains(dto.getWorker1Id())
-//                || !availableWorkers.contains(dto.getWorker2Id())
-//                || dto.getWorker1Id().equals(dto.getWorker2Id())) {
-//            throw new InvalidPickUpRequestException("One or both workers not available or identical.");
-//        }
-//        logger.debug("Workers {} and {} validated", dto.getWorker1Id(), dto.getWorker2Id());
-//
-//        // 6. Generate ID and persist
-//        String newId = idGenerator.generatePickUpId();
-//        PickUp pickUp = PickUp.builder()
-//                .id(newId)
+//        // Generate ID and save PickUp
+//        String pickupId = idGenerator.generatePickUpId();
+//        PickUp pickup = PickUp.builder()
+//                .id(pickupId)
 //                .zoneId(dto.getZoneId())
 //                .timeSlotStart(dto.getTimeSlotStart())
 //                .timeSlotEnd(dto.getTimeSlotEnd())
@@ -127,137 +87,67 @@
 //                .vehicleId(dto.getVehicleId())
 //                .worker1Id(dto.getWorker1Id())
 //                .worker2Id(dto.getWorker2Id())
-//                .status(PickUpStatus.NOT_STARTED)
+//                .status(PickUpStatus.IN_PROGRESS)
 //                .build();
-//        repository.save(pickUp);
-//        logger.info("Persisted PickUp with ID: {}", newId);
+//        repository.save(pickup);
 //
-//        // 7. Notify logging module
-//        webClient.post()
-//                .uri(loggingServiceUrl + "/api/logs")
-//                .bodyValue(
-//                        new LogEntry("CREATE_PICKUP", "Created PickUp ID: " + newId)
-//                )
-//                .retrieve()
-//                .bodyToMono(Void.class)
-//                .block(Duration.ofSeconds(5));
-//        logger.debug("Logged creation event for PickUp ID: {}", newId);
+//        log.info("Pickup created with ID: {}", pickupId);
 //
-//        // 8. Occupy vehicle and workers
-//        webClient.put()
-//                .uri(vehicleServiceUrl + "/api/vehicles/occupy/{vehicleId}", dto.getVehicleId())
-//                .retrieve()
-//                .bodyToMono(Void.class)
-//                .block(Duration.ofSeconds(5));
-//        logger.debug("Vehicle {} marked occupied", dto.getVehicleId());
+//        // Notify Worker and Vehicle Services
+//        notifyWorkerService(dto.getWorker1Id(), "OCCUPIED");
+//        notifyWorkerService(dto.getWorker2Id(), "OCCUPIED");
+//        notifyVehicleService(dto.getVehicleId(), "OCCUPIED");
 //
-//        webClient.put()
-//                .uri(workerServiceUrl + "/api/workers/occupy/{workerId}", dto.getWorker1Id())
-//                .retrieve()
-//                .bodyToMono(Void.class)
-//                .block(Duration.ofSeconds(5));
-//        webClient.put()
-//                .uri(workerServiceUrl + "/api/workers/occupy/{workerId}", dto.getWorker2Id())
-//                .retrieve()
-//                .bodyToMono(Void.class)
-//                .block(Duration.ofSeconds(5));
-//        logger.debug("Workers {} and {} marked occupied", dto.getWorker1Id(), dto.getWorker2Id());
-//
-//        return newId;
+//        return pickupId;
 //    }
 //
+//    /**
+//     * Deletes an existing PickUp.
+//     */
 //    @Override
 //    @Transactional
 //    public DeletePickUpResponseDto deletePickUp(String pickUpId) {
-//        logger.info("Received request to delete PickUp ID: {}", pickUpId);
+//        log.info("Deleting PickUp with ID: {}", pickUpId);
 //
-//        PickUp existing = repository.findById(pickUpId)
-//                .orElseThrow(() -> new PickUpNotFoundException(pickUpId));
+//        PickUp pickup = repository.findById(pickUpId)
+//                .orElseThrow(() -> new PickUpNotFoundException("Pickup not found with ID: " + pickUpId));
+//        repository.delete(pickup);
 //
-//        // 1. Free vehicle
-//        webClient.put()
-//                .uri(vehicleServiceUrl + "/api/vehicles/free/{vehicleId}", existing.getVehicleId())
-//                .retrieve()
-//                .bodyToMono(Void.class)
-//                .block(Duration.ofSeconds(5));
-//        logger.debug("Vehicle {} freed", existing.getVehicleId());
+//        log.info("Pickup deleted with ID: {}", pickUpId);
 //
-//        // 2. Free workers
-//        webClient.put()
-//                .uri(workerServiceUrl + "/api/workers/free/{workerId}", existing.getWorker1Id())
-//                .retrieve()
-//                .bodyToMono(Void.class)
-//                .block(Duration.ofSeconds(5));
-//        webClient.put()
-//                .uri(workerServiceUrl + "/api/workers/free/{workerId}", existing.getWorker2Id())
-//                .retrieve()
-//                .bodyToMono(Void.class)
-//                .block(Duration.ofSeconds(5));
-//        logger.debug("Workers {} and {} freed", existing.getWorker1Id(), existing.getWorker2Id());
-//
-//        // 3. Delete entity
-//        repository.delete(existing);
-//        logger.info("Deleted PickUp ID: {}", pickUpId);
-//
-//        // 4. Notify logging
-//        webClient.post()
-//                .uri(loggingServiceUrl + "/api/logs")
-//                .bodyValue(new LogEntry("DELETE_PICKUP", "Deleted PickUp ID: " + pickUpId))
-//                .retrieve()
-//                .bodyToMono(Void.class)
-//                .block(Duration.ofSeconds(5));
-//        logger.debug("Logged deletion event for PickUp ID: {}", pickUpId);
+//        // Notify Worker and Vehicle Services to set assets "AVAILABLE"
+//        notifyWorkerService(pickup.getWorker1Id(), "AVAILABLE");
+//        notifyWorkerService(pickup.getWorker2Id(), "AVAILABLE");
+//        notifyVehicleService(pickup.getVehicleId(), "AVAILABLE");
 //
 //        return new DeletePickUpResponseDto(pickUpId, "DELETED");
 //    }
 //
-//    @Override
-//    public List<PickUpDto> listAllPickUps() {
-//        logger.info("Listing all PickUps");
-//        List<PickUp> all = repository.findAll();
-//        logger.debug("Found {} pickups", all.size());
-//        return all.stream()
-//                .map(p -> PickUpDto.builder()
-//                        .id(p.getId())
-//                        .zoneId(p.getZoneId())
-//                        .timeSlotStart(p.getTimeSlotStart())
-//                        .timeSlotEnd(p.getTimeSlotEnd())
-//                        .frequency(p.getFrequency())
-//                        .locationName(p.getLocationName())
-//                        .vehicleId(p.getVehicleId())
-//                        .worker1Id(p.getWorker1Id())
-//                        .worker2Id(p.getWorker2Id())
-//                        .status(p.getStatus())
-//                        .build())
-//                .collect(Collectors.toList());
-//    }
-//
-//    @Override
-//    public PickUpDto getPickUpById(String pickUpId) {
-//        logger.info("Fetching PickUp by ID: {}", pickUpId);
-//        PickUp p = repository.findById(pickUpId)
-//                .orElseThrow(() -> new PickUpNotFoundException(pickUpId));
-//        return PickUpDto.builder()
-//                .id(p.getId())
-//                .zoneId(p.getZoneId())
-//                .timeSlotStart(p.getTimeSlotStart())
-//                .timeSlotEnd(p.getTimeSlotEnd())
-//                .frequency(p.getFrequency())
-//                .locationName(p.getLocationName())
-//                .vehicleId(p.getVehicleId())
-//                .worker1Id(p.getWorker1Id())
-//                .worker2Id(p.getWorker2Id())
-//                .status(p.getStatus())
-//                .build();
+//    /**
+//     * Notifies the Worker Service.
+//     */
+//    private void notifyWorkerService(String workerId, String status) {
+//        log.info("Notifying Worker Service: workerId={}, status={}", workerId, status);
+//        webClient.put()
+//                .uri(workerServiceUrl + "/{workerId}", workerId)
+//                .bodyValue(new WorkerStatusUpdateDto(status))
+//                .retrieve()
+//                .bodyToMono(String.class) // Assuming successful response returns a String
+//                .block(Duration.ofSeconds(5));
+//        log.info("Worker Service notified for workerId={} with status={}", workerId, status);
 //    }
 //
 //    /**
-//     * Inner DTO for logging payload.
+//     * Notifies the Vehicle Service.
 //     */
-//    @Data
-//    @AllArgsConstructor
-//    private static class LogEntry {
-//        private String eventType;
-//        private String details;
+//    private void notifyVehicleService(String vehicleId, String status) {
+//        log.info("Notifying Vehicle Service: vehicleId={}, status={}", vehicleId, status);
+//        webClient.put()
+//                .uri(vehicleServiceUrl + "/{id}", vehicleId)
+//                .bodyValue(new VehicleStatusUpdateDto(vehicleId, status))
+//                .retrieve()
+//                .bodyToMono(String.class) // Assuming successful response returns a String
+//                .block(Duration.ofSeconds(5));
+//        log.info("Vehicle Service notified for vehicleId={} with status={}", vehicleId, status);
 //    }
 //}
