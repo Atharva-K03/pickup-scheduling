@@ -13,11 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * REST controller for managing PickUp operations.
- * Provides endpoints for creating, deleting, retrieving, and listing PickUp resources.
- */
-
-/**
+ * REST controller for managing special PickUp operations.
+ *
  * API Endpoints for Pickup Service
  *
  * 1)
@@ -57,7 +54,7 @@ public class PickUpController {
      */
     @PostMapping
     public ResponseEntity<String> createPickUp(@Valid @RequestBody CreatePickUpDto dto) {
-        log.info("POST /pickups - payload: {}", dto);
+        log.info("POST - /wastewise/scheduler/pickups - payload: {}", dto);
         String id = pickUpService.createPickUp(dto);
         ResponseEntity<String> response = ResponseEntity.status(HttpStatus.CREATED).body(id);
         log.debug("Created PickUp with ID: {}", id);
@@ -72,7 +69,7 @@ public class PickUpController {
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deletePickUp(@PathVariable String id) {
-        log.info("DELETE /pickups/{}", id);
+        log.info("DELETE /wastewise/scheduler/pickups/{}", id);
         pickUpService.deletePickUp(id);
         log.debug("Deleted PickUp with ID: {}", id);
         String message = "Pickup with ID " + id + " has been deleted successfully.";
@@ -86,7 +83,7 @@ public class PickUpController {
      */
     @GetMapping
     public ResponseEntity<List<PickUpDto>> listAllPickUps() {
-        log.info("GET /pickups");
+        log.info("GET /wastewise/scheduler/pickups");
         List<PickUpDto> all = pickUpService.listAllPickUps();
         log.debug("Returning {} pickups", all.size());
         return ResponseEntity.ok(all);
@@ -100,7 +97,7 @@ public class PickUpController {
      */
     @GetMapping("/{id}")
     public ResponseEntity<PickUpDto> getPickUpById(@PathVariable String id) {
-        log.info("GET /pickups/{}", id);
+        log.info("GET /wastewise/scheduler/pickups/{}", id);
         PickUpDto dto = pickUpService.getPickUpById(id);
         log.debug("Fetched PickUp: {}", dto);
         return ResponseEntity.ok(dto);
