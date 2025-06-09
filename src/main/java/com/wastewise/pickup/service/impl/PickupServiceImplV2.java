@@ -2,7 +2,6 @@
 //
 //import com.wastewise.pickup.dto.CreatePickUpDto;
 //import com.wastewise.pickup.dto.DeletePickUpResponseDto;
-//import com.wastewise.pickup.dto.PickUpDto;
 //import com.wastewise.pickup.dto.VehicleStatusUpdateDto;
 //import com.wastewise.pickup.dto.WorkerStatusUpdateDto;
 //import com.wastewise.pickup.exception.InvalidPickUpRequestException;
@@ -19,7 +18,6 @@
 //import org.springframework.web.reactive.function.client.WebClient;
 //
 //import java.time.Duration;
-//
 ///**
 // * Implementation of PickUpService.
 // */
@@ -33,6 +31,9 @@
 //    private final String zoneServiceUrl;
 //    private final String vehicleServiceUrl;
 //    private final String workerServiceUrl;
+//    private static final String STATUS_OCCUPIED = "OCCUPIED";
+//    private static final String STATUS_AVAILABLE = "AVAILABLE";
+//
 //
 //    /**
 //     * Constructor for PickUpServiceImpl.
@@ -60,19 +61,45 @@
 //    public String createPickUp(CreatePickUpDto dto) {
 //        log.info("Creating pickup: {}", dto);
 //
-//        // Validate time slot
+//        // Validations for the PickUp creation request.
+//
+//        // 1) Validate time slot
 //        if (dto.getTimeSlotEnd().isBefore(dto.getTimeSlotStart().plusMinutes(30))) {
 //            throw new InvalidPickUpRequestException("Invalid time slot: end time must be at least 30 minutes after start time.");
 //        }
 //
-//        // Validate zone
+//        // 2) Validate zone
 //        Boolean zoneExists = webClient.get()
-//                .uri(zoneServiceUrl + "/api/zones/{zoneId}", dto.getZoneId())
+//                .uri(zoneServiceUrl + "/wastewise/zone/{zoneId}", dto.getZoneId())
 //                .retrieve()
 //                .bodyToMono(Boolean.class)
 //                .block(Duration.ofSeconds(5));
 //        if (zoneExists == null || !zoneExists) {
-//            throw new InvalidPickUpRequestException("Zone not found: " + dto.getZoneId());
+//            throw new InvalidPickUpRequestException("Zone not found");
+//        }
+//
+//        // 3) Validate vehicle
+//        Boolean vehicleExists = webClient.get()
+//                .uri(vehicleServiceUrl + "/{vehicleId}" + dto.getVehicleId())
+//                .retrieve()
+//                .bodyToMono(Boolean.class)
+//                .block(Duration.ofSeconds(5));
+//        if (vehicleExists == null || !vehicleExists) {
+//            throw new InvalidPickUpRequestException("Vehicles are not available");
+//        }
+//
+//        // 4) Validate workers
+//        long validWorkerCount = dto.getWorkerIds().stream()
+//                .map(workerId -> webClient.get()
+//                        .uri(workerServiceUrl + "/" + workerId)
+//                        .retrieve()
+//                        .bodyToMono(Boolean.class)
+//                        .block(Duration.ofSeconds(5)))
+//                .filter(Boolean.TRUE::equals)
+//                .count();
+//
+//        if (validWorkerCount < 2) {
+//            throw new InvalidPickUpRequestException("At least two valid workers must exist.");
 //        }
 //
 //        // Generate ID and save PickUp
@@ -87,16 +114,16 @@
 //                .vehicleId(dto.getVehicleId())
 //                .worker1Id(dto.getWorker1Id())
 //                .worker2Id(dto.getWorker2Id())
-//                .status(PickUpStatus.IN_PROGRESS)
+//                .status(PickUpStatus.SCHEDULED)
 //                .build();
 //        repository.save(pickup);
 //
 //        log.info("Pickup created with ID: {}", pickupId);
 //
 //        // Notify Worker and Vehicle Services
-//        notifyWorkerService(dto.getWorker1Id(), "OCCUPIED");
-//        notifyWorkerService(dto.getWorker2Id(), "OCCUPIED");
-//        notifyVehicleService(dto.getVehicleId(), "OCCUPIED");
+//        notifyWorkerService(dto.getWorker1Id(), STATUS_OCCUPIED);
+//        notifyWorkerService(dto.getWorker2Id(), STATUS_OCCUPIED);
+//        notifyVehicleService(dto.getVehicleId(), STATUS_OCCUPIED);
 //
 //        return pickupId;
 //    }
@@ -116,9 +143,9 @@
 //        log.info("Pickup deleted with ID: {}", pickUpId);
 //
 //        // Notify Worker and Vehicle Services to set assets "AVAILABLE"
-//        notifyWorkerService(pickup.getWorker1Id(), "AVAILABLE");
-//        notifyWorkerService(pickup.getWorker2Id(), "AVAILABLE");
-//        notifyVehicleService(pickup.getVehicleId(), "AVAILABLE");
+//        notifyWorkerService(pickup.getWorker1Id(), STATUS_AVAILABLE);
+//        notifyWorkerService(pickup.getWorker2Id(), STATUS_AVAILABLE);
+//        notifyVehicleService(pickup.getVehicleId(), STATUS_AVAILABLE);
 //
 //        return new DeletePickUpResponseDto(pickUpId, "DELETED");
 //    }
@@ -132,7 +159,7 @@
 //                .uri(workerServiceUrl + "/{workerId}", workerId)
 //                .bodyValue(new WorkerStatusUpdateDto(status))
 //                .retrieve()
-//                .bodyToMono(String.class) // Assuming successful response returns a String
+//                .bodyToMono(String.class)
 //                .block(Duration.ofSeconds(5));
 //        log.info("Worker Service notified for workerId={} with status={}", workerId, status);
 //    }

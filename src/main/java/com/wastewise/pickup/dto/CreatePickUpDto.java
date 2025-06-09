@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * DTO for creating a new PickUp.
@@ -43,4 +44,9 @@ public class CreatePickUpDto {
 
     @NotBlank(message = "worker2Id must not be blank")
     private String worker2Id;
+
+    public List<String> getWorkerIds() {
+        return List.of(worker1Id, worker2Id);
+    }
+
 }

@@ -1,7 +1,7 @@
 package com.wastewise.pickup.model.enums;
 
 public enum PickUpStatus {
-    NOT_STARTED,
+    SCHEDULED,
     IN_PROGRESS,
     COMPLETED
 }

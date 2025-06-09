@@ -11,8 +11,6 @@ import com.wastewise.pickup.repository.PickUpRepository;
 import com.wastewise.pickup.service.PickUpService;
 import com.wastewise.pickup.utility.IdGenerator;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,7 +23,7 @@ public class PickUpServiceImpl implements PickUpService {
     private final IdGenerator idGenerator;
 
     // Enable mock mode for local testing
-    private static final boolean mockMode = true;
+    private static final boolean MOCKMODE = true;
 
     public PickUpServiceImpl(PickUpRepository repository, IdGenerator idGenerator) {
         this.repository = repository;
@@ -42,21 +40,21 @@ public class PickUpServiceImpl implements PickUpService {
         }
 
         // --- Mock zone check ---
-        if (mockMode) {
+        if (MOCKMODE) {
             log.debug("MOCK: Zone {} validated", dto.getZoneId());
         } else {
             throw new UnsupportedOperationException("Zone validation requires remote service.");
         }
 
         // --- Mock available vehicle ---
-        if (mockMode) {
+        if (MOCKMODE) {
             log.debug("MOCK: Vehicle {} validated", dto.getVehicleId());
         } else {
             throw new UnsupportedOperationException("Vehicle validation requires remote service.");
         }
 
         // --- Mock available workers ---
-        if (mockMode) {
+        if (MOCKMODE) {
             if (dto.getWorker1Id().equals(dto.getWorker2Id())) {
                 throw new InvalidPickUpRequestException("Worker 1 and Worker 2 cannot be the same.");
             }
@@ -77,13 +75,13 @@ public class PickUpServiceImpl implements PickUpService {
                 .vehicleId(dto.getVehicleId())
                 .worker1Id(dto.getWorker1Id())
                 .worker2Id(dto.getWorker2Id())
-                .status(PickUpStatus.NOT_STARTED)
+                .status(PickUpStatus.SCHEDULED)
                 .build();
         repository.save(pickUp);
         log.info("Persisted PickUp with ID: {}", newId);
 
         // --- Mock logging & occupancy ---
-        if (mockMode) {
+        if (MOCKMODE) {
             log.debug("MOCK: Logged creation event and marked resources occupied.");
         }
 
@@ -101,7 +99,7 @@ public class PickUpServiceImpl implements PickUpService {
         repository.delete(existing);
         log.info("Deleted PickUp ID: {}", pickUpId);
 
-        if (mockMode) {
+        if (MOCKMODE) {
             log.debug("MOCK: Freed vehicle and workers, and logged deletion.");
         }
 
