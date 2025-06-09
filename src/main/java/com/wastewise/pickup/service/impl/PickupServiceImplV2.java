@@ -69,36 +69,35 @@
 //            throw new InvalidPickUpRequestException("Invalid time slot: end time must be at least 30 minutes after start time.");
 //        }
 //
-//        // 2) Validate zone
+//        // 2) Validate zone - check if the zone exists
 //        Boolean zoneExists = webClient.get()
 //                .uri(zoneServiceUrl + "/{zoneId}", dto.getZoneId())
 //                .retrieve()
 //                .bodyToMono(Boolean.class)
-//                .block(Duration.ofSeconds(5));
+//                .block(Duration.ofSeconds(1));
 //        if (zoneExists == null || !zoneExists) {
 //            throw new InvalidPickUpRequestException("Zone not found");
 //        }
 //
-//        // 3) Validate vehicle
+//        // 3) Validate vehicle - check if the vehicle exists and is available
 //        Boolean vehicleExists = webClient.get()
 //                .uri(vehicleServiceUrl + "/{vehicleId}" + dto.getVehicleId())
 //                .retrieve()
 //                .bodyToMono(Boolean.class)
-//                .block(Duration.ofSeconds(5));
+//                .block(Duration.ofSeconds(1));
 //        if (vehicleExists == null || !vehicleExists) {
 //            throw new InvalidPickUpRequestException("Vehicles are not available");
 //        }
 //
-//        // 4) Validate workers
+//        // 4) Validate workers - check if at least two valid workers exist
 //        long validWorkerCount = dto.getWorkerIds().stream()
 //                .map(workerId -> webClient.get()
 //                        .uri(workerServiceUrl + "/" + workerId)
 //                        .retrieve()
 //                        .bodyToMono(Boolean.class)
-//                        .block(Duration.ofSeconds(5)))
+//                        .block(Duration.ofSeconds(1)))
 //                .filter(Boolean.TRUE::equals)
 //                .count();
-//
 //        if (validWorkerCount < 2) {
 //            throw new InvalidPickUpRequestException("At least two valid workers must exist.");
 //        }
@@ -211,13 +210,11 @@
 ///**
 // * Improvements and Notes:
 // *
-// * The above code assumes that the Worker and Vehicle services are available and can be reached via the provided URLs.
-// *
 // * The WebClient is used to make synchronous calls to these services. Asynchronous handling can be implemented if needed.
 // *
 // * Wrap Asynchronous Calls With Retry Logic (spring-retry) for better resilience.
 // *
-// * Error handling is basic and can be extended based on specific requirements.
+// * Error handling can be provided for notifications to external services.
 // *
 // * The code is designed to be used in a microservices architecture where each service is responsible for its own domain logic.
 // *
