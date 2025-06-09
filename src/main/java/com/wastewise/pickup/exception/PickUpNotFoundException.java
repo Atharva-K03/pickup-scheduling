@@ -5,6 +5,7 @@ package com.wastewise.pickup.exception;
  */
 public class PickUpNotFoundException extends RuntimeException {
     public PickUpNotFoundException(String pickUpId) {
+
         super("PickUp not found with ID: " + pickUpId);
     }
 }

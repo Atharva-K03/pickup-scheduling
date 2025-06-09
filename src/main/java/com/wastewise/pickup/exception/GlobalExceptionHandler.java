@@ -11,22 +11,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.time.LocalDateTime;
 
 /**
- * <b>GlobalExceptionHandler</b>
- *
- * This class provides centralized exception handling across the PickUp microservice.
- * It catches and handles application-specific exceptions
- * (e.g., {@link PickUpNotFoundException}, {@link InvalidPickUpRequestException})
- * and sends proper responses to the client with appropriate HTTP status codes.
- *
- * Additionally, it logs the issues for debugging and monitoring purposes.
- *
- * <p>
- * Annotations:
- *  - {@link RestControllerAdvice}: Indicates that this class contains globally
- *      applicable exception handlers.
- *  - {@link Slf4j}: Allows the use of a logger for logging exception details.
- * </p>
+ * Focuses on converting exceptions to meaningful API error responses.
+ * Catches application-specific exceptions (e.g., {@link PickUpNotFoundException}, {@link InvalidPickUpRequestException})
+ * and returns appropriate HTTP responses. Logs all handled exceptions.
  */
+
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -98,7 +87,6 @@ public class GlobalExceptionHandler {
 
     /**
      * Handles all unhandled exceptions in the application.
-     * This is a catch-all for unexpected errors and ensures the client receives a
      * response with HTTP status 500 (Internal Server Error) and a generic error message.
      *
      * @param ex The exception that was thrown.
