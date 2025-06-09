@@ -19,7 +19,8 @@
 //
 //import java.time.Duration;
 ///**
-// * Implementation of PickUpService.
+// * This service handles the creation and deletion of PickUp jobs, including validations
+// * and interactions with external services for zones, vehicles, and workers.
 // */
 //@Service
 //@Slf4j
@@ -70,7 +71,7 @@
 //
 //        // 2) Validate zone
 //        Boolean zoneExists = webClient.get()
-//                .uri(zoneServiceUrl + "/wastewise/zone/{zoneId}", dto.getZoneId())
+//                .uri(zoneServiceUrl + "/{zoneId}", dto.getZoneId())
 //                .retrieve()
 //                .bodyToMono(Boolean.class)
 //                .block(Duration.ofSeconds(5));
@@ -122,8 +123,13 @@
 //
 //        // Notify Worker and Vehicle Services
 //        notifyWorkerService(dto.getWorker1Id(), STATUS_OCCUPIED);
+//        log.info("Worker 1 {} marked as OCCUPIED", dto.getWorker1Id());
+//
 //        notifyWorkerService(dto.getWorker2Id(), STATUS_OCCUPIED);
+//        log.info("Worker 2 {} marked as OCCUPIED", dto.getWorker2Id());
+//
 //        notifyVehicleService(dto.getVehicleId(), STATUS_OCCUPIED);
+//        log.info("Vehicle {} marked as OCCUPIED", dto.getVehicleId());
 //
 //        return pickupId;
 //    }
@@ -144,8 +150,13 @@
 //
 //        // Notify Worker and Vehicle Services to set assets "AVAILABLE"
 //        notifyWorkerService(pickup.getWorker1Id(), STATUS_AVAILABLE);
+//        log.info("Worker 1 {} marked as AVAILABLE", pickup.getWorker1Id());
+//
 //        notifyWorkerService(pickup.getWorker2Id(), STATUS_AVAILABLE);
+//        log.info("Worker 2 {} marked as AVAILABLE", pickup.getWorker2Id());
+//
 //        notifyVehicleService(pickup.getVehicleId(), STATUS_AVAILABLE);
+//        log.info("Vehicle {} marked as AVAILABLE", pickup.getVehicleId());
 //
 //        return new DeletePickUpResponseDto(pickUpId, "DELETED");
 //    }
@@ -154,27 +165,60 @@
 //     * Notifies the Worker Service.
 //     */
 //    private void notifyWorkerService(String workerId, String status) {
-//        log.info("Notifying Worker Service: workerId={}, status={}", workerId, status);
-//        webClient.put()
-//                .uri(workerServiceUrl + "/{workerId}", workerId)
-//                .bodyValue(new WorkerStatusUpdateDto(status))
-//                .retrieve()
-//                .bodyToMono(String.class)
-//                .block(Duration.ofSeconds(5));
-//        log.info("Worker Service notified for workerId={} with status={}", workerId, status);
+//        try {
+//            log.info("Notifying worker {} with status: {}", workerId, status);
+//
+//            webClient.post()
+//                    .uri(workerServiceUrl + "/status")
+//                    .bodyValue(new WorkerStatusUpdateDto(workerId, status))
+//                    .retrieve()
+//                    .toBodilessEntity()
+//                    .block(); // synchronous call for now
+//
+//            log.info("Worker {} successfully notified with status: {}", workerId, status);
+//
+//        } catch (Exception ex) {
+//            log.error("Error notifying worker {}: {}", workerId, ex.getMessage(), ex);
+//            throw new InvalidPickUpRequestException(
+//                    String.format("Failed to notify worker '%s' with status '%s'", workerId, status));
+//        }
 //    }
 //
 //    /**
 //     * Notifies the Vehicle Service.
 //     */
 //    private void notifyVehicleService(String vehicleId, String status) {
-//        log.info("Notifying Vehicle Service: vehicleId={}, status={}", vehicleId, status);
-//        webClient.put()
-//                .uri(vehicleServiceUrl + "/{id}", vehicleId)
-//                .bodyValue(new VehicleStatusUpdateDto(vehicleId, status))
-//                .retrieve()
-//                .bodyToMono(String.class) // Assuming successful response returns a String
-//                .block(Duration.ofSeconds(5));
-//        log.info("Vehicle Service notified for vehicleId={} with status={}", vehicleId, status);
+//        try {
+//            log.info("Notifying vehicle {} with status: {}", vehicleId, status);
+//
+//            webClient.post()
+//                    .uri(vehicleServiceUrl + "/status")
+//                    .bodyValue(new VehicleStatusUpdateDto(vehicleId, status))
+//                    .retrieve()
+//                    .toBodilessEntity()
+//                    .block(); // synchronous call for now
+//
+//            log.info("Vehicle {} successfully notified with status: {}", vehicleId, status);
+//
+//        } catch (Exception ex) {
+//            log.error("Error notifying vehicle {}: {}", vehicleId, ex.getMessage(), ex);
+//            throw new InvalidPickUpRequestException(
+//                    String.format("Failed to notify vehicle '%s' with status '%s'", vehicleId, status));
+//        }
 //    }
 //}
+//
+///**
+// * Improvements and Notes:
+// *
+// * The above code assumes that the Worker and Vehicle services are available and can be reached via the provided URLs.
+// *
+// * The WebClient is used to make synchronous calls to these services. Asynchronous handling can be implemented if needed.
+// *
+// * Wrap Asynchronous Calls With Retry Logic (spring-retry) for better resilience.
+// *
+// * Error handling is basic and can be extended based on specific requirements.
+// *
+// * The code is designed to be used in a microservices architecture where each service is responsible for its own domain logic.
+// *
+// */

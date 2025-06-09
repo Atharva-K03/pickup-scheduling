@@ -11,5 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class WorkerStatusUpdateDto {
+    private String workerId; // Worker ID to update
     private String status; // Expected values: "OCCUPIED" or "AVAILABLE"
 }
