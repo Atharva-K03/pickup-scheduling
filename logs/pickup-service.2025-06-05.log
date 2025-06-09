@@ -1,0 +1,86 @@
+2025-06-05 16:48:46.645 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-06-05 16:48:46.747 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Starting PickUpApplication using Java 21 with PID 32596 (C:\Users\2408560\Downloads\IDP\pickup\target\classes started by 2408560 in C:\Users\2408560\Downloads\IDP\pickup)
+2025-06-05 16:48:46.748 [restartedMain] DEBUG c.wastewise.pickup.PickUpApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-05 16:48:46.749 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-05 16:48:46.815 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-05 16:48:46.815 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-05 16:48:48.265 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-05 16:48:48.462 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 176 ms. Found 1 JPA repository interface.
+2025-06-05 16:48:48.675 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=70d7edd2-4510-38eb-aefd-de318fb7544a
+2025-06-05 16:48:49.293 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-05 16:48:49.309 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-06-05 16:48:49.311 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-05 16:48:49.311 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-05 16:48:49.384 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-05 16:48:49.385 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2568 ms
+2025-06-05 16:48:49.576 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-05 16:48:50.102 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f187204
+2025-06-05 16:48:50.104 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-05 16:48:50.262 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-05 16:48:50.474 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-05 16:48:50.586 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-05 16:48:50.982 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-05 16:48:51.060 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-05 16:48:51.061 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-05 16:48:51.075 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-05 16:48:51.882 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-05 16:48:51.940 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-05 16:48:52.632 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-05 16:48:53.182 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-06-05 16:48:53.327 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-06-05 16:48:53.345 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-06-05 16:48:53.358 [restartedMain] INFO  c.wastewise.pickup.PickUpApplication - Started PickUpApplication in 7.496 seconds (process running for 8.493)
+2025-06-05 16:49:14.577 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-05 16:49:14.579 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-05 16:49:14.582 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-06-05 16:49:15.832 [http-nio-8081-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 578 ms
+2025-06-05 16:53:54.205 [http-nio-8081-exec-6] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z001, timeSlotStart=2025-06-08T11:20:55.091, timeSlotEnd=2025-06-08T11:20:55.091, frequency=DAILY, locationName=tidi, vehicleId=123, worker1Id=3ede, worker2Id=34dfefw)
+2025-06-05 16:53:54.219 [http-nio-8081-exec-6] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z001, timeSlotStart=2025-06-08T11:20:55.091, timeSlotEnd=2025-06-08T11:20:55.091, frequency=DAILY, locationName=tidi, vehicleId=123, worker1Id=3ede, worker2Id=34dfefw)
+2025-06-05 16:53:54.227 [http-nio-8081-exec-6] ERROR c.w.p.e.GlobalExceptionHandler - InvalidPickUpRequestException: End time must be at least 30 minutes after start time.
+2025-06-05 16:53:54.234 [http-nio-8081-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.wastewise.pickup.exception.InvalidPickUpRequestException: End time must be at least 30 minutes after start time.]
+2025-06-05 16:54:12.876 [http-nio-8081-exec-5] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z001, timeSlotStart=2025-06-08T11:20:55.091, timeSlotEnd=2025-06-08T11:20:55.091, frequency=DAILY, locationName=tidi, vehicleId=123, worker1Id=3ede, worker2Id=34dfefw)
+2025-06-05 16:54:12.878 [http-nio-8081-exec-5] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z001, timeSlotStart=2025-06-08T11:20:55.091, timeSlotEnd=2025-06-08T11:20:55.091, frequency=DAILY, locationName=tidi, vehicleId=123, worker1Id=3ede, worker2Id=34dfefw)
+2025-06-05 16:54:12.881 [http-nio-8081-exec-5] ERROR c.w.p.e.GlobalExceptionHandler - InvalidPickUpRequestException: End time must be at least 30 minutes after start time.
+2025-06-05 16:54:12.883 [http-nio-8081-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.wastewise.pickup.exception.InvalidPickUpRequestException: End time must be at least 30 minutes after start time.]
+2025-06-05 16:54:35.528 [http-nio-8081-exec-2] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z001, timeSlotStart=2025-06-08T11:20:55.091, timeSlotEnd=2025-06-08T11:21:55.091, frequency=DAILY, locationName=tidi, vehicleId=123, worker1Id=3ede, worker2Id=34dfefw)
+2025-06-05 16:54:35.529 [http-nio-8081-exec-2] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z001, timeSlotStart=2025-06-08T11:20:55.091, timeSlotEnd=2025-06-08T11:21:55.091, frequency=DAILY, locationName=tidi, vehicleId=123, worker1Id=3ede, worker2Id=34dfefw)
+2025-06-05 16:54:35.534 [http-nio-8081-exec-2] ERROR c.w.p.e.GlobalExceptionHandler - InvalidPickUpRequestException: End time must be at least 30 minutes after start time.
+2025-06-05 16:54:35.535 [http-nio-8081-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.wastewise.pickup.exception.InvalidPickUpRequestException: End time must be at least 30 minutes after start time.]
+2025-06-05 16:55:38.816 [http-nio-8081-exec-7] INFO  c.w.p.controller.PickUpController - POST /pickups - payload: CreatePickUpDto(zoneId=Z029, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-05 16:55:38.818 [http-nio-8081-exec-7] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to create PickUp: CreatePickUpDto(zoneId=Z029, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010)
+2025-06-05 16:55:38.818 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Zone Z029 validated
+2025-06-05 16:55:38.818 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Vehicle V006 validated
+2025-06-05 16:55:38.818 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Workers W009 and W010 validated
+2025-06-05 16:55:38.926 [http-nio-8081-exec-7] INFO  com.wastewise.pickup.model.PickUp - About to persist new PickUp with ID: P001
+2025-06-05 16:55:38.943 [http-nio-8081-exec-7] INFO  c.w.p.service.impl.PickUpServiceImpl - Persisted PickUp with ID: P001
+2025-06-05 16:55:38.943 [http-nio-8081-exec-7] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Logged creation event and marked resources occupied.
+2025-06-05 16:55:39.002 [http-nio-8081-exec-7] DEBUG c.w.p.controller.PickUpController - Created PickUp with ID: P001
+2025-06-05 16:55:44.049 [http-nio-8081-exec-8] INFO  c.w.p.controller.PickUpController - GET /pickups
+2025-06-05 16:55:44.049 [http-nio-8081-exec-8] INFO  c.w.p.service.impl.PickUpServiceImpl - Listing all PickUps
+2025-06-05 16:55:44.182 [http-nio-8081-exec-8] DEBUG c.w.p.service.impl.PickUpServiceImpl - Found 1 pickups
+2025-06-05 16:55:44.182 [http-nio-8081-exec-8] DEBUG c.w.p.controller.PickUpController - Returning 1 pickups
+2025-06-05 16:55:49.494 [http-nio-8081-exec-1] INFO  c.w.p.controller.PickUpController - GET /pickups/P001
+2025-06-05 16:55:49.495 [http-nio-8081-exec-1] INFO  c.w.p.service.impl.PickUpServiceImpl - Fetching PickUp by ID: P001
+2025-06-05 16:55:49.510 [http-nio-8081-exec-1] DEBUG c.w.p.controller.PickUpController - Fetched PickUp: PickUpDto(id=P001, zoneId=Z029, timeSlotStart=2025-06-09T08:11, timeSlotEnd=2025-06-09T09:12, frequency=DAILY, locationName=NIT, vehicleId=V006, worker1Id=W009, worker2Id=W010, status=NOT_STARTED)
+2025-06-05 16:55:52.654 [http-nio-8081-exec-10] INFO  c.w.p.controller.PickUpController - DELETE /pickups/P002
+2025-06-05 16:55:52.657 [http-nio-8081-exec-10] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to delete PickUp ID: P002
+2025-06-05 16:55:52.662 [http-nio-8081-exec-10] ERROR c.w.p.e.GlobalExceptionHandler - PickUpNotFoundException: PickUp not found with ID: P002
+2025-06-05 16:55:52.664 [http-nio-8081-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.wastewise.pickup.exception.PickUpNotFoundException: PickUp not found with ID: P002]
+2025-06-05 16:56:01.331 [http-nio-8081-exec-3] INFO  c.w.p.controller.PickUpController - DELETE /pickups/P001
+2025-06-05 16:56:01.333 [http-nio-8081-exec-3] INFO  c.w.p.service.impl.PickUpServiceImpl - Received request to delete PickUp ID: P001
+2025-06-05 16:56:01.340 [http-nio-8081-exec-3] INFO  com.wastewise.pickup.model.PickUp - About to remove PickUp with ID: P001
+2025-06-05 16:56:01.342 [http-nio-8081-exec-3] INFO  c.w.p.service.impl.PickUpServiceImpl - Deleted PickUp ID: P001
+2025-06-05 16:56:01.343 [http-nio-8081-exec-3] DEBUG c.w.p.service.impl.PickUpServiceImpl - MOCK: Freed vehicle and workers, and logged deletion.
+2025-06-05 16:56:01.361 [http-nio-8081-exec-3] DEBUG c.w.p.controller.PickUpController - Deleted PickUp with ID: P001
+2025-06-05 17:00:09.368 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-05 17:00:09.373 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-05 17:00:09.406 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-05 17:00:09.410 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-05 17:00:09.420 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

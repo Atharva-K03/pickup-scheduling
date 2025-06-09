@@ -397,7 +397,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    private final IdGenerator idGenerator;
 &nbsp;
 &nbsp;    // Enable mock mode for local testing
-&nbsp;    private static final boolean mockMode = true;
+&nbsp;    private static final boolean MOCKMODE = true;
 &nbsp;
 <b class="fc">&nbsp;    public PickUpServiceImpl(PickUpRepository repository, IdGenerator idGenerator) {</b>
 <b class="fc">&nbsp;        this.repository = repository;</b>
@@ -414,21 +414,21 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;        }
 &nbsp;
 &nbsp;        // --- Mock zone check ---
-&nbsp;        if (mockMode) {
+&nbsp;        if (MOCKMODE) {
 <b class="nc">&nbsp;            logger.debug(&quot;MOCK: Zone {} validated&quot;, dto.getZoneId());</b>
 &nbsp;        } else {
 &nbsp;            throw new UnsupportedOperationException(&quot;Zone validation requires remote service.&quot;);
 &nbsp;        }
 &nbsp;
 &nbsp;        // --- Mock available vehicle ---
-&nbsp;        if (mockMode) {
+&nbsp;        if (MOCKMODE) {
 <b class="nc">&nbsp;            logger.debug(&quot;MOCK: Vehicle {} validated&quot;, dto.getVehicleId());</b>
 &nbsp;        } else {
 &nbsp;            throw new UnsupportedOperationException(&quot;Vehicle validation requires remote service.&quot;);
 &nbsp;        }
 &nbsp;
 &nbsp;        // --- Mock available workers ---
-&nbsp;        if (mockMode) {
+&nbsp;        if (MOCKMODE) {
 <b class="nc">&nbsp;            if (dto.getWorker1Id().equals(dto.getWorker2Id())) {</b>
 <b class="nc">&nbsp;                throw new InvalidPickUpRequestException(&quot;Worker 1 and Worker 2 cannot be the same.&quot;);</b>
 &nbsp;            }
@@ -455,7 +455,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;        logger.info(&quot;Persisted PickUp with ID: {}&quot;, newId);</b>
 &nbsp;
 &nbsp;        // --- Mock logging &amp; occupancy ---
-&nbsp;        if (mockMode) {
+&nbsp;        if (MOCKMODE) {
 <b class="nc">&nbsp;            logger.debug(&quot;MOCK: Logged creation event and marked resources occupied.&quot;);</b>
 &nbsp;        }
 &nbsp;
@@ -473,7 +473,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;        repository.delete(existing);</b>
 <b class="nc">&nbsp;        logger.info(&quot;Deleted PickUp ID: {}&quot;, pickUpId);</b>
 &nbsp;
-&nbsp;        if (mockMode) {
+&nbsp;        if (MOCKMODE) {
 <b class="nc">&nbsp;            logger.debug(&quot;MOCK: Freed vehicle and workers, and logged deletion.&quot;);</b>
 &nbsp;        }
 &nbsp;
