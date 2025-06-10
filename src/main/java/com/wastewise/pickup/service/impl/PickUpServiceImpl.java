@@ -10,6 +10,7 @@ import com.wastewise.pickup.model.PickUp;
 import com.wastewise.pickup.repository.PickUpRepository;
 import com.wastewise.pickup.service.PickUpService;
 import com.wastewise.pickup.utility.IdGenerator;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 @Slf4j
 @Service
+@RequiredArgsConstructor
 public class PickUpServiceImpl implements PickUpService {
 
     private final PickUpRepository repository;
@@ -24,11 +26,6 @@ public class PickUpServiceImpl implements PickUpService {
 
     // Enable mock mode for local testing
     private static final boolean MOCKMODE = true;
-
-    public PickUpServiceImpl(PickUpRepository repository, IdGenerator idGenerator) {
-        this.repository = repository;
-        this.idGenerator = idGenerator;
-    }
 
     @Override
     @Transactional

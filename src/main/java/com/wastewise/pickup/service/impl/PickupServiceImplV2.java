@@ -1,9 +1,6 @@
 //package com.wastewise.pickup.service.impl;
 //
-//import com.wastewise.pickup.dto.CreatePickUpDto;
-//import com.wastewise.pickup.dto.DeletePickUpResponseDto;
-//import com.wastewise.pickup.dto.VehicleStatusUpdateDto;
-//import com.wastewise.pickup.dto.WorkerStatusUpdateDto;
+//import com.wastewise.pickup.dto.*;
 //import com.wastewise.pickup.exception.InvalidPickUpRequestException;
 //import com.wastewise.pickup.exception.PickUpNotFoundException;
 //import com.wastewise.pickup.model.PickUp;
@@ -11,6 +8,7 @@
 //import com.wastewise.pickup.repository.PickUpRepository;
 //import com.wastewise.pickup.service.PickUpService;
 //import com.wastewise.pickup.utility.IdGenerator;
+//import lombok.RequiredArgsConstructor;
 //import lombok.extern.slf4j.Slf4j;
 //import org.springframework.beans.factory.annotation.Value;
 //import org.springframework.stereotype.Service;
@@ -18,12 +16,15 @@
 //import org.springframework.web.reactive.function.client.WebClient;
 //
 //import java.time.Duration;
+//import java.util.List;
+//
 ///**
 // * This service handles the creation and deletion of PickUp jobs, including validations
 // * and interactions with external services for zones, vehicles, and workers.
 // */
 //@Service
 //@Slf4j
+//@RequiredArgsConstructor
 //public class PickUpServiceImpl implements PickUpService {
 //
 //    private final PickUpRepository repository;
@@ -32,27 +33,13 @@
 //    private final String zoneServiceUrl;
 //    private final String vehicleServiceUrl;
 //    private final String workerServiceUrl;
+//    /**
+//     * Status constants for notifying Worker and Vehicle Services.
+//     */
 //    private static final String STATUS_OCCUPIED = "OCCUPIED";
 //    private static final String STATUS_AVAILABLE = "AVAILABLE";
 //
 //
-//    /**
-//     * Constructor for PickUpServiceImpl.
-//     */
-//    public PickUpServiceImpl(
-//            PickUpRepository repository,
-//            IdGenerator idGenerator,
-//            WebClient.Builder webClientBuilder,
-//            @Value("${zone-service.url}") String zoneServiceUrl,
-//            @Value("${vehicle-service.url}") String vehicleServiceUrl,
-//            @Value("${worker-service.url}") String workerServiceUrl) {
-//        this.repository = repository;
-//        this.idGenerator = idGenerator;
-//        this.webClient = webClientBuilder.build();
-//        this.zoneServiceUrl = zoneServiceUrl;
-//        this.vehicleServiceUrl = vehicleServiceUrl;
-//        this.workerServiceUrl = workerServiceUrl;
-//    }
 //
 //    /**
 //     * Creates a new PickUp.
@@ -96,7 +83,7 @@
 //                        .retrieve()
 //                        .bodyToMono(Boolean.class)
 //                        .block(Duration.ofSeconds(1)))
-//                .filter(Boolean.TRUE::equals)
+//                .filter(Boolean.TRUE::equals) // consider only valid workers
 //                .count();
 //        if (validWorkerCount < 2) {
 //            throw new InvalidPickUpRequestException("At least two valid workers must exist.");
@@ -161,13 +148,58 @@
 //    }
 //
 //    /**
+//     * Lists all scheduled PickUps.
+//     */
+//    @Override
+//    public List<PickUpDto> listAllPickUps() {
+//        log.info("Listing all PickUps");
+//        List<PickUp> all = repository.findAll();
+//        log.debug("Found {} pickups", all.size());
+//        return all.stream()
+//                .map(p -> PickUpDto.builder()
+//                        .id(p.getId())
+//                        .zoneId(p.getZoneId())
+//                        .timeSlotStart(p.getTimeSlotStart())
+//                        .timeSlotEnd(p.getTimeSlotEnd())
+//                        .frequency(p.getFrequency())
+//                        .locationName(p.getLocationName())
+//                        .vehicleId(p.getVehicleId())
+//                        .worker1Id(p.getWorker1Id())
+//                        .worker2Id(p.getWorker2Id())
+//                        .status(p.getStatus())
+//                        .build())
+//                .toList();
+//    }
+//
+//    /**
+//     * Fetches a PickUp by its ID.
+//     */
+//    @Override
+//    public PickUpDto getPickUpById(String pickUpId) {
+//        log.info("Fetching PickUp by ID: {}", pickUpId);
+//        PickUp p = repository.findById(pickUpId)
+//                .orElseThrow(() -> new PickUpNotFoundException(pickUpId));
+//        return PickUpDto.builder()
+//                .id(p.getId())
+//                .zoneId(p.getZoneId())
+//                .timeSlotStart(p.getTimeSlotStart())
+//                .timeSlotEnd(p.getTimeSlotEnd())
+//                .frequency(p.getFrequency())
+//                .locationName(p.getLocationName())
+//                .vehicleId(p.getVehicleId())
+//                .worker1Id(p.getWorker1Id())
+//                .worker2Id(p.getWorker2Id())
+//                .status(p.getStatus())
+//                .build();
+//    }
+//    /**
 //     * Notifies the Worker Service.
 //     */
 //    private void notifyWorkerService(String workerId, String status) {
 //        try {
 //            log.info("Notifying worker {} with status: {}", workerId, status);
 //
-//            webClient.post()
+//            webClient.put()
 //                    .uri(workerServiceUrl + "/status")
 //                    .bodyValue(new WorkerStatusUpdateDto(workerId, status))
 //                    .retrieve()
@@ -190,7 +222,7 @@
 //        try {
 //            log.info("Notifying vehicle {} with status: {}", vehicleId, status);
 //
-//            webClient.post()
+//            webClient.put()
 //                    .uri(vehicleServiceUrl + "/status")
 //                    .bodyValue(new VehicleStatusUpdateDto(vehicleId, status))
 //                    .retrieve()
@@ -207,15 +239,4 @@
 //    }
 //}
 //
-///**
-// * Improvements and Notes:
-// *
-// * The WebClient is used to make synchronous calls to these services. Asynchronous handling can be implemented if needed.
-// *
-// * Wrap Asynchronous Calls With Retry Logic (spring-retry) for better resilience.
-// *
-// * Error handling can be provided for notifications to external services.
-// *
-// * The code is designed to be used in a microservices architecture where each service is responsible for its own domain logic.
-// *
-// */
+//

@@ -18,29 +18,29 @@ import java.util.List;
  * API Endpoints for Pickup Service
  *
  * 1)
- * POST /wastewise/pickups
  * Description: Create a new pickup task
+ * POST /wastewise/scheduler/pickups
  * Response: JSON Body 201 + pickupId
  *
  * 2)
- * GET /wastewise/pickups
  * Description: List all scheduled pickups
+ * GET /wastewise/scheduler/pickups
  * Response: 200 + List<PickUpDto>
  *
  * 3)
- * GET /wastewise/pickups/{pickupId}
- * Description: Get pickup by ID
+ * Description: Get a pickup by ID
+ * GET /wastewise/scheduler/pickups/{pickupId}
  * Response: 200 + PickUpDto / 404 if not found
  *
  * 4)
- * DELETE /wastewise/pickups/{pickupId}
  * Description: Delete a pickup by ID
- * Response: 204 No Content / 404 if not found
+ * DELETE /wastewise/scheduler/pickups/{pickupId}
+ * Response: 200 Ok / 404 if not found
  */
 
 @RestController
 @RequestMapping("/wastewise/scheduler/pickups")
-@RequiredArgsConstructor
+@RequiredArgsConstructor //final and non-null
 @Slf4j
 public class PickUpController {
 
@@ -56,7 +56,7 @@ public class PickUpController {
     public ResponseEntity<String> createPickUp(@Valid @RequestBody CreatePickUpDto dto) {
         log.info("POST - /wastewise/scheduler/pickups - payload: {}", dto);
         String id = pickUpService.createPickUp(dto);
-        ResponseEntity<String> response = ResponseEntity.status(HttpStatus.CREATED).body(id);
+        ResponseEntity<String> response = ResponseEntity.status(HttpStatus.CREATED).body(id + " Created");
         log.debug("Created PickUp with ID: {}", id);
         return response;
     }
