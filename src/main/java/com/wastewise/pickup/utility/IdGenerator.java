@@ -16,6 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class IdGenerator {
 
     private final PickUpRepository pickupRespository;
+
     private static final String PREFIX = "P";
     private static final AtomicInteger counter = new AtomicInteger(0);
 
