@@ -1,52 +1,72 @@
 package com.wastewise.pickup.service.impl;
 
-import com.wastewise.pickup.client.VehicleServiceClient;
-import com.wastewise.pickup.client.WorkerServiceClient;
-import com.wastewise.pickup.client.ZoneServiceClient;
 import com.wastewise.pickup.dto.CreatePickUpDto;
 import com.wastewise.pickup.dto.DeletePickUpResponseDto;
 import com.wastewise.pickup.dto.PickUpDto;
+import com.wastewise.pickup.model.enums.PickUpStatus;
+import com.wastewise.pickup.exception.InvalidPickUpRequestException;
 import com.wastewise.pickup.exception.PickUpNotFoundException;
 import com.wastewise.pickup.model.PickUp;
-import com.wastewise.pickup.model.enums.PickUpStatus;
 import com.wastewise.pickup.repository.PickUpRepository;
-import com.wastewise.pickup.service.PickUpAsyncService;
 import com.wastewise.pickup.service.PickUpService;
 import com.wastewise.pickup.utility.IdGenerator;
-import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
 @Slf4j
 @Service
-@RequiredArgsConstructor
 public class PickUpServiceImpl implements PickUpService {
 
     private final PickUpRepository repository;
     private final IdGenerator idGenerator;
-    private final ZoneServiceClient zoneServiceClient;
-    private final WorkerServiceClient workerServiceClient;
-    private final VehicleServiceClient vehicleServiceClient;
-    private final PickUpAsyncService asyncService;
+
+    // Enable mock mode for local testing
+    private static final boolean MOCKMODE = true;
+
+    public PickUpServiceImpl(PickUpRepository repository, IdGenerator idGenerator) {
+        this.repository = repository;
+        this.idGenerator = idGenerator;
+    }
 
     @Override
     @Transactional
     public String createPickUp(CreatePickUpDto dto) {
-        log.info("Received createPickUp request: {}", dto);
+        log.info("Received request to create PickUp: {}", dto);
 
-        // Validate zone, workers, and vehicle
-        validateZone(dto.getZoneId());
-        validateWorkers(dto.getWorker1Id(), dto.getWorker2Id());
-        validateVehicle(dto.getVehicleId());
+        if (dto.getTimeSlotEnd().isBefore(dto.getTimeSlotStart().plusMinutes(30))) {
+            throw new InvalidPickUpRequestException("End time must be at least 30 minutes after start time.");
+        }
 
-        // Persist new pick-up
-        String generatedId = idGenerator.generatePickUpId();
+        // --- Mock zone check ---
+        if (MOCKMODE) {
+            log.debug("MOCK: Zone {} validated", dto.getZoneId());
+        } else {
+            throw new UnsupportedOperationException("Zone validation requires remote service.");
+        }
+
+        // --- Mock available vehicle ---
+        if (MOCKMODE) {
+            log.debug("MOCK: Vehicle {} validated", dto.getVehicleId());
+        } else {
+            throw new UnsupportedOperationException("Vehicle validation requires remote service.");
+        }
+
+        // --- Mock available workers ---
+        if (MOCKMODE) {
+            if (dto.getWorker1Id().equals(dto.getWorker2Id())) {
+                throw new InvalidPickUpRequestException("Worker 1 and Worker 2 cannot be the same.");
+            }
+            log.debug("MOCK: Workers {} and {} validated", dto.getWorker1Id(), dto.getWorker2Id());
+        } else {
+            throw new UnsupportedOperationException("Worker validation requires remote service.");
+        }
+
+        // --- Save pickup ---
+        String newId = idGenerator.generatePickUpId();
         PickUp pickUp = PickUp.builder()
-                .id(generatedId)
+                .id(newId)
                 .zoneId(dto.getZoneId())
                 .timeSlotStart(dto.getTimeSlotStart())
                 .timeSlotEnd(dto.getTimeSlotEnd())
@@ -57,80 +77,73 @@ public class PickUpServiceImpl implements PickUpService {
                 .worker2Id(dto.getWorker2Id())
                 .status(PickUpStatus.SCHEDULED)
                 .build();
-
         repository.save(pickUp);
-        log.info("PickUp with ID '{}' created successfully.", generatedId);
+        log.info("Persisted PickUp with ID: {}", newId);
 
-        // Trigger async resource updates
-        asyncService.updateResourceStatus(dto.getWorker1Id(), dto.getWorker2Id(), dto.getVehicleId());
+        // --- Mock logging & occupancy ---
+        if (MOCKMODE) {
+            log.debug("MOCK: Logged creation event and marked resources occupied.");
+        }
 
-        return generatedId;
-    }
-
-    @Override
-    public List<PickUpDto> listAllPickUps() {
-        return repository.findAll().stream()
-                .map(this::mapToDto)
-                .toList();
-    }
-
-    @Override
-    public PickUpDto getPickUpById(String pickUpId) {
-        return repository.findById(pickUpId)
-                .map(this::mapToDto)
-                .orElseThrow(() -> new PickUpNotFoundException(pickUpId));
+        return newId;
     }
 
     @Override
     @Transactional
     public DeletePickUpResponseDto deletePickUp(String pickUpId) {
-        log.info("Deleting PickUp with ID '{}'.", pickUpId);
+        log.info("Received request to delete PickUp ID: {}", pickUpId);
 
-        PickUp existingPickUp = repository.findById(pickUpId)
+        PickUp existing = repository.findById(pickUpId)
                 .orElseThrow(() -> new PickUpNotFoundException(pickUpId));
 
-        repository.delete(existingPickUp);
-        log.info("PickUp with ID '{}' deleted successfully.", pickUpId);
+        repository.delete(existing);
+        log.info("Deleted PickUp ID: {}", pickUpId);
 
-        // Trigger async resource release updates
-        asyncService.releaseResources(existingPickUp.getWorker1Id(), existingPickUp.getWorker2Id(), existingPickUp.getVehicleId());
-
-        return DeletePickUpResponseDto.builder()
-                .pickUpId(pickUpId)
-                .status("PickUp deleted successfully.")
-                .build();
-    }
-
-    private void validateZone(String zoneId) {
-        if (zoneServiceClient.getAllZones().stream().noneMatch(zone -> zone.getId().equals(zoneId))) {
-            throw new IllegalArgumentException("Invalid or unavailable zone: " + zoneId);
+        if (MOCKMODE) {
+            log.debug("MOCK: Freed vehicle and workers, and logged deletion.");
         }
+
+        return new DeletePickUpResponseDto(pickUpId, "DELETED");
     }
 
-    private void validateWorkers(String worker1Id, String worker2Id) {
-        if (workerServiceClient.getWorkerById(worker1Id) == null || workerServiceClient.getWorkerById(worker2Id) == null) {
-            throw new IllegalArgumentException("Invalid or unavailable workers: " + worker1Id + ", " + worker2Id);
-        }
+    @Override
+    public List<PickUpDto> listAllPickUps() {
+        log.info("Listing all PickUps");
+        List<PickUp> all = repository.findAll();
+        log.debug("Found {} pickups", all.size());
+        return all.stream()
+                .map(p -> PickUpDto.builder()
+                        .id(p.getId())
+                        .zoneId(p.getZoneId())
+                        .timeSlotStart(p.getTimeSlotStart())
+                        .timeSlotEnd(p.getTimeSlotEnd())
+                        .frequency(p.getFrequency())
+                        .locationName(p.getLocationName())
+                        .vehicleId(p.getVehicleId())
+                        .worker1Id(p.getWorker1Id())
+                        .worker2Id(p.getWorker2Id())
+                        .status(p.getStatus())
+                        .build())
+                        .toList();
     }
 
-    private void validateVehicle(String vehicleId) {
-        if (vehicleServiceClient.getVehicleById(vehicleId) == null) {
-            throw new IllegalArgumentException("Invalid or unavailable vehicle: " + vehicleId);
-        }
-    }
-
-    private PickUpDto mapToDto(PickUp pickUp) {
+    @Override
+    public PickUpDto getPickUpById(String pickUpId) {
+        log.info("Fetching PickUp by ID: {}", pickUpId);
+        PickUp p = repository.findById(pickUpId)
+                .orElseThrow(() -> new PickUpNotFoundException(pickUpId));
         return PickUpDto.builder()
-                .id(pickUp.getId())
-                .zoneId(pickUp.getZoneId())
-                .timeSlotStart(pickUp.getTimeSlotStart())
-                .timeSlotEnd(pickUp.getTimeSlotEnd())
-                .frequency(pickUp.getFrequency())
-                .locationName(pickUp.getLocationName())
-                .vehicleId(pickUp.getVehicleId())
-                .worker1Id(pickUp.getWorker1Id())
-                .worker2Id(pickUp.getWorker2Id())
-                .status(pickUp.getStatus())
+                .id(p.getId())
+                .zoneId(p.getZoneId())
+                .timeSlotStart(p.getTimeSlotStart())
+                .timeSlotEnd(p.getTimeSlotEnd())
+                .frequency(p.getFrequency())
+                .locationName(p.getLocationName())
+                .vehicleId(p.getVehicleId())
+                .worker1Id(p.getWorker1Id())
+                .worker2Id(p.getWorker2Id())
+                .status(p.getStatus())
                 .build();
     }
+
 }
