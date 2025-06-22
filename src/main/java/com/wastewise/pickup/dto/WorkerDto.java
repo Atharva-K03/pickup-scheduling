@@ -10,6 +10,4 @@ import lombok.NoArgsConstructor;
 public class WorkerDto {
     private String id;
     private String name;
-    private String status; // AVAILABLE, OCCUPIED, OFF_DUTY
-    private String skill;
 }

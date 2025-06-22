@@ -27,7 +27,7 @@
     </root>
 
     <!-- Package-specific logging level -->
-    <logger name="com.wastewise.pickup" level="DEBUG" additivity="false">
+    <logger name="com.wastewise.pickup" level="INFO" additivity="false">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />
     </logger>

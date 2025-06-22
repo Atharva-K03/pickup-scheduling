@@ -86,43 +86,6 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Handles the {@link ResourceNotAvailableException}.
-     * This exception is thrown when a requested resource (e.g., worker, vehicle) is not available.
-     *
-     * @param ex The {@link ResourceNotAvailableException} that was thrown.
-     * @return An {@link ApiErrorResponse} indicating that the requested resource is not available.
-     */
-    @ExceptionHandler(ResourceNotAvailableException.class)
-    @ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
-    public ApiErrorResponse handleResourceNotAvailable(ResourceNotAvailableException ex) {
-        log.error("Resource not available: {}", ex.getMessage());
-        return new ApiErrorResponse(
-                HttpStatus.SERVICE_UNAVAILABLE.value(),
-                "RESOURCE_UNAVAILABLE: " + ex.getMessage(),  // Combine the error type and message
-                LocalDateTime.now()
-        );
-    }
-
-    /**
-     * Handles the {@link ServiceCommunicationException}.
-     * This exception is thrown when there is an issue communicating with another service.
-     *
-     * @param ex The {@link ServiceCommunicationException} that was thrown.
-     * @return An {@link ApiErrorResponse} indicating a service communication error.
-     */
-    @ExceptionHandler(ServiceCommunicationException.class)
-    @ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
-    public ApiErrorResponse handleServiceCommunication(ServiceCommunicationException ex) {
-        log.error("Service communication error: {}", ex.getMessage());
-        return new ApiErrorResponse(
-                HttpStatus.SERVICE_UNAVAILABLE.value(),
-                "SERVICE_COMMUNICATION_ERROR: " + ex.getMessage(),  // Combine the error type and message
-                LocalDateTime.now()
-        );
-    }
-
-
-    /**
      * Handles all unhandled exceptions in the application.
      * response with HTTP status 500 (Internal Server Error) and a generic error message.
      *

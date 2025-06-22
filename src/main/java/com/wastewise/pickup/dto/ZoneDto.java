@@ -10,6 +10,4 @@ import lombok.NoArgsConstructor;
 public class ZoneDto {
     private String id;
     private String name;
-    private String city;
-    private String state;
 }
